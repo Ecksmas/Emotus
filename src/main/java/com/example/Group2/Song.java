@@ -1,19 +1,21 @@
 package com.example.Group2;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "SONG")
 public class Song {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "TITLE")
     private String title;
+    @Column(name = "ARTIST")
     private String artist;
+    @Column(name = "GENRER")
     private String genrer;
+    @Column(name = "EMOTION")
     private String emotion;
 
     public Song(Long id, String title, String artist, String genrer, String emotion) {
