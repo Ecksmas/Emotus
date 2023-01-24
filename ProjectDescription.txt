@@ -1,0 +1,17 @@
+- Description of application
+Create a app/website that can handle inputs from the user and will return what kind of feelings
+a song conveys with a boolean(lvl0) text firstly(lvl1), secondly picture(lvl2)and lastly with OpenAi(Dall-e2)(lvl3)
+This would primarly help people with that have a hard time to grasp certain emotions
+We will use Java, Spring(Web, Thymeleaf), SQL, HTML, CSS and API's
+
+- Must haves
+Search function
+Log searches as cookies
+Database/API with songs and lyrics
+Result in the form of text(possibly colored)
+Integration with a text analyzer api/or create our own
+
+- Nice to haves
+Pick a mood and get equivalent result in songs
+Integration towards a picture API/Databse(lvl2)
+Integration towards OpenAI(Dall-e2)(lvl3)
