@@ -31,16 +31,16 @@
                 <th>Song ID</th>
                 <th>Title</th>
                 <th>Artist</th>
-                <th>Genrer</th>
+                <th>Genre</th>
                 <th>Emotion</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="product : ${listProducts}">
+            <tr th:each="song : ${listSongs}">
                 <td th:text="${song.id}">Song ID</td>
                 <td th:text="${song.title}">Title</td>
                 <td th:text="${song.artist}">Artist</td>
-                <td th:text="${song.genrer}">Genrer</td>
+                <td th:text="${song.genre}">Genre</td>
                 <td th:text="${song.emotion}">Emotion</td>
             </tr>
             </tbody>

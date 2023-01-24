@@ -13,16 +13,16 @@ public class Song {
     private String title;
     @Column(name = "ARTIST")
     private String artist;
-    @Column(name = "GENRER")
-    private String genrer;
+    @Column(name = "GENRE")
+    private String genre;
     @Column(name = "EMOTION")
     private String emotion;
 
-    public Song(Long id, String title, String artist, String genrer, String emotion) {
+    public Song(Long id, String title, String artist, String genre, String emotion) {
         this.id = id;
         this.title = title;
         this.artist = artist;
-        this.genrer = genrer;
+        this.genre = genre;
         this.emotion = emotion;
     }
 
@@ -53,12 +53,12 @@ public class Song {
         this.artist = artist;
     }
 
-    public String getGenrer() {
-        return genrer;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGenrer(String genrer) {
-        this.genrer = genrer;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
     public String getEmotion() {
