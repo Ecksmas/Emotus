@@ -1,3 +1,7 @@
 Search function:
 https://www.codejava.net/frameworks/spring-boot/spring-data-jpa-filter-search-examples
 https://www.codejava.net/frameworks/spring-boot/spring-boot-crud-example-with-spring-mvc-spring-data-jpa-thymeleaf-hibernate-mysql
+
+How to use API:
+https://rapidapi.com/blog/how-to-use-an-api-with-java/
+
