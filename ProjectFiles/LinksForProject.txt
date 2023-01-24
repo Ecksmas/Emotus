@@ -5,3 +5,5 @@ https://www.codejava.net/frameworks/spring-boot/spring-boot-crud-example-with-sp
 How to use API:
 https://rapidapi.com/blog/how-to-use-an-api-with-java/
 
+Hwo to use API with Spring:
+https://rapidapi.com/blog/how-to-use-an-api-with-spring-resttemplate/#creating-the-project-scaffolding

@@ -18,8 +18,7 @@ public class HomeController {
     @Autowired
     private SongService service;
 
-
-    @RequestMapping("/")
+    @GetMapping("/")
     public String viewHomePage(Model model, @Param("keyword") String keyword) {
         List<Song> listSongs = service.listAll(keyword);
         model.addAttribute("listSongs", listSongs);
