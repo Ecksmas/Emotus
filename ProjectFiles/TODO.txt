@@ -1,0 +1,37 @@
+
+TODO
+
+1. Scan the web for different API's/Database that we can use
+  - Music database that has title, artist, album, genrer and lyrics
+  - API that can analyze song lyrics and return values
+  
+2. Create a flowchart, sketch website and document steps
+
+3. Create a first plan(excel) and work with agile(stand ups)
+
+4. Must haves
+  - Search function
+  - Log searches as cookies
+  - Database/API with songs and lyrics
+  - Result in the form of text(possibly colored)
+  - Integration with a text analyzer api/or create our own
+
+5. Review to see if we can manage "Nice to have" 
+  - Pick a mood and get equivalent result in songs
+  - Integration towards a picture API/Databse(lvl2)
+  - Integration towards OpenAI(Dall-e2)(lvl3)
+
+6. Create unit test
+
+7. Review work once again and look if we need to do more
+
+8. Create presentation
+
+9. Do a agile retro-perspective
+
+AW requirements:
+- Must haves
+Agile method
+At least two techs from the program
+Sprints
+Unti tests
