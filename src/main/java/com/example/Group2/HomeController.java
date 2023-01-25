@@ -2,6 +2,7 @@ package com.example.Group2;
 
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
@@ -19,32 +20,50 @@ public class HomeController {
 
     @GetMapping("/")
     public String viewHomePage(Model model, @Param("keyword") String keyword) {
-        List<Song> listSongs = service.listAll(keyword);
-        model.addAttribute("listSongs", listSongs);
         model.addAttribute("keyword", keyword);
 
         return "HomePage";
     }
-    //
+
+
 
     @GetMapping("/song")
-            public String song(Model model){
-    HttpResponse<String> songIdResponse = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=happy&per_page=1&page=1")
-            .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
-            .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
-            .asString();
-    model.addAttribute("ID", songIdResponse.getBody());
-
-    String songId = String.valueOf(songIdResponse);
-        System.out.println(songId);
-
- /*       HttpResponse<String> lyrics = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=" + songId + "&text_format=plain")
+    public String song(Model model, String key) {
+        HttpResponse<String> songIdResponse = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=" + key + "&per_page=1&page=1")
                 .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
                 .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
                 .asString();
-        model.addAttribute("ID", lyrics.getBody());*/
-    return "Song";
+
+        String s = songIdResponse.getBody();
+        //hämtar song ID från json data
+        String songId = s.substring(122, 128);
+
+        HttpResponse<String> lyrics = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=" + songId + "&text_format=plain")
+                .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
+                .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
+                .asString();
+
+
+        String lyricsResult = lyrics.getBody();
+
+        //String songIdResult = lyricsResult.substring(lyricsResult.indexOf("plain:"), lyricsResult.indexOf("path:"));
+
+        String finalLyrics = StringUtils.substringBetween(lyricsResult, "plain\":\"", "\"}},\"");
+
+        // vill ta bort \n och []
+
+
+        finalLyrics = finalLyrics.replace("\\n", " ");
+
+
+        model.addAttribute("ID", finalLyrics);
+
+        // Ludwigs sparade rad <3 System.out.println(finalLyrics);
+
+        return "Song";
+
     }
+// komma åt lyric mellan plain:" och "path
 
 
 //    @GetMapping("/search")
