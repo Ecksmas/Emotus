@@ -11,10 +11,10 @@
     <a href="">About</a>
 </div>
 
-<form th:action="@{/}">
-    <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}" required />
+<form th:action="@{/song}">
+    <input type="text" name="key" id="keyword" size="50" />
     &nbsp;
-    <input type="submit" value="Search" />
+    <input type="submit" value="Search"/>
     &nbsp;
     <input type="button" value="Clear" id="btnClear" onclick="clearSearch()" />
     <script type="text/javascript">

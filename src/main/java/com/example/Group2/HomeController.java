@@ -28,15 +28,18 @@ public class HomeController {
 
 
     @GetMapping("/song")
-    public String song(Model model, String key) {
+    public String song(Model model, @RequestParam(required = false, defaultValue = "happy") String key) {
         HttpResponse<String> songIdResponse = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=" + key + "&per_page=1&page=1")
                 .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
                 .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
                 .asString();
 
         String s = songIdResponse.getBody();
-        //hämtar song ID från json data
+        //hämtar song ID från json data använd inte siffror.
         String songId = s.substring(122, 128);
+
+        // fungerar bättre snedstreck, måste uppdatera till något bättre som fungerar för alla lyrics.
+        songId= songId.replace("/", "");
 
         HttpResponse<String> lyrics = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=" + songId + "&text_format=plain")
                 .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
