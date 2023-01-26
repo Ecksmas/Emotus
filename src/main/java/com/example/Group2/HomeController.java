@@ -18,6 +18,8 @@ public class HomeController {
     @Autowired
     private SongService service;
 
+    String endLyrics;
+
     @GetMapping("/")
     public String viewHomePage(Model model, @Param("keyword") String keyword) {
         model.addAttribute("keyword", keyword);
@@ -58,6 +60,7 @@ public class HomeController {
 
         finalLyrics = finalLyrics.replace("\\n", " ");
 
+        endLyrics = finalLyrics;
 
         model.addAttribute("ID", finalLyrics);
 
@@ -65,6 +68,19 @@ public class HomeController {
 
         return "Song";
 
+    }
+
+    @GetMapping("/Text")
+    public String text(Model model) {
+        HttpResponse<String> response = Unirest.post("https://sentiment-analysis46.p.rapidapi.com/sentiment")
+                .header("content-type", "application/json")
+                .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
+                .header("X-RapidAPI-Host", "sentiment-analysis46.p.rapidapi.com")
+                .body("{\r\n    \"text\": \"" + endLyrics + "\",\r\n    \"spell_check\": true,\r\n    \"keywords\": true\r\n}")
+                .asString();
+        model.addAttribute("ID", response.getBody());
+
+        return "Text";
     }
 // komma åt lyric mellan plain:" och "path
 
