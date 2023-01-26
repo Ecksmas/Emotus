@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Index</title>
+</head>
+<body>
+<h1>Emotus</h1>
+<div class="links">
+    <a href="">About</a>
+    <a href="">GitHub</a>
+    <a href="">The Team</a>
+</div>
+<div class="search-wrapper">
+    <form th:action="@{/song}">
+        <input type="search" name="key" id="keyword" size="50" placeholder="Type to search"/>
+        &nbsp;
+        <input type="submit" value="Search" data-search/>
+        &nbsp;
+        <input type="button" value="Clear" id="btnClear" onclick="clearSearch()"/>
+        <script type="text/javascript">
+    function clearSearch() {
+        window.location = "[[@{/}]]";
+    }
+
+
+        </script>
+    </form>
+</div>
+<!--<div class="user-cards" data-user-cards-container></div>-->
+<!--<template>-->
+<!--    <div class="card">-->
+<!--        <div class="header"></div>-->
+<!--        <div class="body"></div>-->
+<!--    </div>-->
+<!--</template>-->
+
+
+</body>
+</html>

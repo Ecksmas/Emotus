@@ -11,39 +11,58 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class HomeController {
-    @Autowired
-    private SongService service;
-
     String endLyrics;
 
     @GetMapping("/")
     public String viewHomePage(Model model, @Param("keyword") String keyword) {
         model.addAttribute("keyword", keyword);
 
-        return "HomePage";
-    }
+        /*
+        int resultPerPage = 1;
 
+        HttpResponse<String> songIdResponse = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=" + keyword + "&per_page=" + resultPerPage + "&page=1")
+                .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
+                .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
+                .asString();
+
+        model.addAttribute("Result", songIdResponse.getBody());
+
+
+        ArrayList<String> songList = new ArrayList<>();
+
+        for (int i = 0; i < resultPerPage; i++) {
+            String songBody = songIdResponse.getBody();
+            songList.add(songBody);
+        }
+
+        System.out.println(songList.get(0));
+        System.out.println(songList.get(1));
+
+         */
+        return "Index";
+    }
 
 
     @GetMapping("/song")
     public String song(Model model, @RequestParam(required = false, defaultValue = "happy") String key) {
-        HttpResponse<String> songIdResponse = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=" + key + "&per_page=1&page=1")
+        HttpResponse<String> songIdResponse = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=" + key + "&per_page=5&page=1")
                 .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
                 .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
                 .asString();
 
         String s = songIdResponse.getBody();
-        System.out.println(s);
+
         //Fetch song ID from JSON string and substring into components
         String songId = StringUtils.substringBetween(s, "\\/songs\\/", "\",\"");
         String artistName = StringUtils.substringBetween(s, "\"artist_names\":\"", "\",\"");
         String songTitle = StringUtils.substringBetween(s, "\"full_title\":\"", "by\\u00a0");
         String songImg = StringUtils.substringBetween(s, "\"header_image_url\":\"", "\",\"");
-        songImg = songImg.replace("\\","");
+        songImg = songImg.replace("\\", "");
 
         model.addAttribute("artistName", artistName);
         model.addAttribute("songTitle", songTitle);
@@ -58,8 +77,6 @@ public class HomeController {
 
         String lyricsResult = lyrics.getBody();
 
-        //String songIdResult = lyricsResult.substring(lyricsResult.indexOf("plain:"), lyricsResult.indexOf("path:"));
-
         String finalLyrics = StringUtils.substringBetween(lyricsResult, "plain\":\"", "\"}},\"");
 
         finalLyrics = finalLyrics.replace("\\n", " ");
@@ -70,10 +87,7 @@ public class HomeController {
 
         model.addAttribute("ID", finalLyrics);
 
-        // Ludwigs sparade rad <3 System.out.println(finalLyrics);
-
         return "Song";
-
     }
 
     @GetMapping("/Text")
@@ -85,7 +99,6 @@ public class HomeController {
                 .body("{\r\n    \"text\": \"" + endLyrics + "\",\r\n    \"spell_check\": true,\r\n    \"keywords\": true\r\n}")
                 .asString();
 
-        System.out.println(sentimentResult.getBody());
         String sentimentResultBody = sentimentResult.getBody();
 
         String sentimentText = StringUtils.substringBetween(sentimentResultBody, "\"sentiment\": \"", "\", \"");
