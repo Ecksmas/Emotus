@@ -8,6 +8,13 @@
 <form th:action="@{/Text}">
     <input type="submit" value="Analyse Text"/>
 </form>
+<div>
+    <a>Song: </a>
+    <a th:text="${songTitle}">Song title:</a>
+    <a>Artist: </a>
+    <a th:text="${artistName}">Artist:</a>
+    <img th:src="${songImg}" style="width:10%;">
+</div>
 <p th:text="${ID}"></p>
 </body>
 </html>

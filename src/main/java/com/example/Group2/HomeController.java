@@ -37,11 +37,18 @@ public class HomeController {
                 .asString();
 
         String s = songIdResponse.getBody();
-        //hämtar song ID från json data använd inte siffror.
-        String songId = s.substring(122, 128);
+        System.out.println(s);
+        //Fetch song ID from JSON string and substring into components
+        String songId = StringUtils.substringBetween(s, "\\/songs\\/", "\",\"");
+        String artistName = StringUtils.substringBetween(s, "\"artist_names\":\"", "\",\"");
+        String songTitle = StringUtils.substringBetween(s, "\"full_title\":\"", "by\\u00a0");
+        String songImg = StringUtils.substringBetween(s, "\"header_image_url\":\"", "\",\"");
+        songImg = songImg.replace("\\","");
 
-        // fungerar bättre snedstreck, måste uppdatera till något bättre som fungerar för alla lyrics.
-        songId= songId.replace("/", "");
+        model.addAttribute("artistName", artistName);
+        model.addAttribute("songTitle", songTitle);
+        model.addAttribute("songImg", songImg);
+
 
         HttpResponse<String> lyrics = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=" + songId + "&text_format=plain")
                 .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
@@ -55,10 +62,9 @@ public class HomeController {
 
         String finalLyrics = StringUtils.substringBetween(lyricsResult, "plain\":\"", "\"}},\"");
 
-        // vill ta bort \n och []
-
-
         finalLyrics = finalLyrics.replace("\\n", " ");
+        finalLyrics = finalLyrics.replace("\\u2019", "'");
+        finalLyrics = finalLyrics.replace("\\u2014", "-");
 
         endLyrics = finalLyrics;
 
@@ -72,31 +78,23 @@ public class HomeController {
 
     @GetMapping("/Text")
     public String text(Model model) {
-        HttpResponse<String> response = Unirest.post("https://sentiment-analysis46.p.rapidapi.com/sentiment")
+        HttpResponse<String> sentimentResult = Unirest.post("https://sentiment-analysis46.p.rapidapi.com/sentiment")
                 .header("content-type", "application/json")
                 .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
                 .header("X-RapidAPI-Host", "sentiment-analysis46.p.rapidapi.com")
                 .body("{\r\n    \"text\": \"" + endLyrics + "\",\r\n    \"spell_check\": true,\r\n    \"keywords\": true\r\n}")
                 .asString();
-        model.addAttribute("ID", response.getBody());
+
+        System.out.println(sentimentResult.getBody());
+        String sentimentResultBody = sentimentResult.getBody();
+
+        String sentimentText = StringUtils.substringBetween(sentimentResultBody, "\"sentiment\": \"", "\", \"");
+        String subjectivityText = StringUtils.substringBetween(sentimentResultBody, "subjectivity\": \"", "\", \"");
+
+        model.addAttribute("sentimentText", sentimentText);
+        model.addAttribute("subjectivityText", subjectivityText);
 
         return "Text";
     }
-// komma åt lyric mellan plain:" och "path
-
-
-//    @GetMapping("/search")
-//    public String search(Model model) {
-//        HttpResponse<String> response = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=2396871&text_format=plain")
-//                .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
-//                .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
-//                .asString();
-//        model.addAttribute("ID", response.getBody());
-//
-//        //TODO Parse json string
-//        //TODO Song id must be song
-//
-//        return "ResultPage";
-//    }
 
 }
