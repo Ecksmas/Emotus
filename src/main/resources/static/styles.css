@@ -68,10 +68,12 @@ form.example {
     align-items: center;
     box-sizing: border-box;
     justify-content: center;
+    height: 60px;
+
   }
 
   /* Style the search field */
-  form.example input[type=text] {
+  form.example input[type=search] {
     height: 60px;
     margin-left: 20px;
     font-size: 30px;
@@ -85,7 +87,7 @@ form.example {
   form.example button {
     float: left;
     width: 10%;
-    height: 65px;
+    height: 60px;
     background: #2196F3;
     color: white;
     font-size: 30px;
