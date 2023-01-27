@@ -20,16 +20,8 @@
     <form th:action="@{/song}">
         <input type="search" name="key" id="keyword" size="50" placeholder="Type to search"/>
         &nbsp;
-        <input type="submit" value="Search" data-search/>
+        <input class="submit-button"type="submit" value="Search" data-search/>
         &nbsp;
-        <input type="button" value="Clear" id="btnClear" onclick="clearSearch()"/>
-        <script type="text/javascript">
-    function clearSearch() {
-        window.location = "[[@{/}]]";
-    }
-
-
-        </script>
     </form>
 </div>
 <!--<div class="user-cards" data-user-cards-container></div>-->
