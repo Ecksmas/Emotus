@@ -1,0 +1,108 @@
+body {
+  background-color: #D5EED5;
+}
+
+
+h1{
+    margin-top:0.2em;
+    margin-bottom: 1em;
+    font-weight: normal;
+    color:#4a4a4a;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+body {
+  margin: 0px;
+}
+nav {
+  margin-top: 40px;
+  padding: 24px;
+  text-align: center;
+  font-family: helvetica;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+#nav-3 {
+  background: #C5DBC5;
+}
+
+
+.link-3 {
+  transition: 0.4s;
+  color: #ffffff;
+  font-size: 30px;
+  text-decoration: none;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+.link-3:hover {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 24px 10px;
+}
+
+body,
+input,
+button,
+label{
+    font-family: Helvetica;
+}
+
+/* classes */
+
+.logo{
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-wrapper
+  {
+      display: flex;
+      justify-content: center;
+  }
+
+
+form.example {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    height: 60px;
+
+  }
+
+  /* Style the search field */
+  form.example input[type=search] {
+    height: 60px;
+    margin-left: 20px;
+    font-size: 30px;
+    border: 1px solid grey;
+    float: left;
+    width: 60%;
+    background: #f1f1f1;
+  }
+
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 10%;
+    height: 60px;
+    background: #2196F3;
+    color: white;
+    font-size: 30px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+
+  form.example button:hover {
+    background: #0b7dda;
+  }
+
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

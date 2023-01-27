@@ -10,27 +10,27 @@
     <title>Index</title>
 </head>
 <body>
-<h1>Emotus</h1>
-<div class="links">
-    <a href="">About</a>
-    <a href="">GitHub</a>
-    <a href="">The Team</a>
-</div>
-<div class="search-wrapper">
-    <form th:action="@{/song}">
-        <input type="search" name="key" id="keyword" size="50" placeholder="Type to search"/>
-        &nbsp;
-        <input type="submit" value="Search" data-search/>
-        &nbsp;
-        <input type="button" value="Clear" id="btnClear" onclick="clearSearch()"/>
-        <script type="text/javascript">
-    function clearSearch() {
-        window.location = "[[@{/}]]";
-    }
+<nav id="nav-3">
+    <a class="link-3" href="#">About</a>
+    <a class="link-3" href="#">GitHub</a>
+    <a class="link-3" href="#">The
+        Team</a>
+</nav>
+<div>
+    <div class="logo">
+        <h1>Emotus</h1>
+    </div>
 
-
-        </script>
-    </form>
+    <!--<div class="search-wrapper">
+        <div class="box">
+            <form th:action="@{/song}">
+                <input type="search" name="key" id="keyword" size="50" placeholder="Type to search"/>
+        </div> &nbsp;
+        <div class="search-button">
+            <input class="submit-button" type="submit" value="Search" data-search/>
+        </div> &nbsp;
+        </form>
+    </div>-->
 </div>
 <!--<div class="user-cards" data-user-cards-container></div>-->
 <!--<template>-->
@@ -39,6 +39,18 @@
 <!--        <div class="body"></div>-->
 <!--    </div>-->
 <!--</template>-->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- The form -->
+<form class="example" th:action="@{/song}">
+
+    <input type="search" placeholder="Type to search" name="key" id="keyword" size="50"/>
+    <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+</body>
+</html>
 
 
 </body>
