@@ -27,7 +27,7 @@ public class HomeController {
         int resultPerPage = 1;
 
         HttpResponse<String> songIdResponse = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=" + keyword + "&per_page=" + resultPerPage + "&page=1")
-                .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
+                .header("X-RapidAPI-Key", "7228fd083cmshf3813a6be37c56fp122391jsn974535b54c88")
                 .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
                 .asString();
 
@@ -86,7 +86,7 @@ public class HomeController {
     @GetMapping("/song")
     public String song(Model model, @RequestParam(required = false, defaultValue = "happy") String key) {
         HttpResponse<String> songIdResponse = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=" + key + "&per_page=5&page=1")
-                .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
+                .header("X-RapidAPI-Key", "7228fd083cmshf3813a6be37c56fp122391jsn974535b54c88")
                 .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
                 .asString();
 
@@ -106,7 +106,7 @@ public class HomeController {
         model.addAttribute("songImg", songImg);
 
         HttpResponse<String> lyrics = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=" + songId + "&text_format=plain")
-                .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
+                .header("X-RapidAPI-Key", "7228fd083cmshf3813a6be37c56fp122391jsn974535b54c88")
                 .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
                 .asString();
 
@@ -129,7 +129,7 @@ public class HomeController {
     public String text(Model model) {
         HttpResponse<String> sentimentResult = Unirest.post("https://sentiment-analysis46.p.rapidapi.com/sentiment")
                 .header("content-type", "application/json")
-                .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
+                .header("X-RapidAPI-Key", "7228fd083cmshf3813a6be37c56fp122391jsn974535b54c88")
                 .header("X-RapidAPI-Host", "sentiment-analysis46.p.rapidapi.com")
                 .body("{\r\n    \"text\": \"" + endLyrics + "\",\r\n    \"spell_check\": true,\r\n    \"keywords\": true\r\n}")
                 .asString();

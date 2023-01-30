@@ -10,10 +10,12 @@ h1{
     color:#4a4a4a;
 }
 
+
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 body {
   margin: 0px;
 }
+
 nav {
   margin-top: 40px;
   padding: 24px;
@@ -24,6 +26,8 @@ nav {
 
 #nav-3 {
   background: #C5DBC5;
+   display: flex;
+          justify-content: center;
 }
 
 
@@ -35,16 +39,61 @@ nav {
   padding: 0 10px;
   margin: 0 10px;
 }
+
 .link-3:hover {
   background-color: #ffffff;
   color: #000000;
   padding: 24px 10px;
 }
+
 .logo{
     font-size: 50px;
     display: flex;
     justify-content: center;
 }
 
+form.analyse {
+display: flex;
+    justify-content: center;
+}
 
+form.analyse button {
+    display: flex;
+    align-items: center;
+    padding: 24px 23px;
+    width: 200px;
+    height: 50px;
+    background: #8FBC8F;
+    color: white;
+    name: Analyse;
+    font-size: 20px;
 
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+
+    border: solid 1px grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  form.analyse button:hover {
+    background: #2E8B57;
+  }
+
+.coverPhoto {
+     display: flex;
+    justify-content: center;
+    padding: 30px 10px;
+
+}
+
+.songTitle {
+   padding: 24px 30px;
+
+}
+.artistName {
+   padding: 24px 20px;
+}
+
+.content {
+display: flex;
+   padding: 24px 30px;
+}
