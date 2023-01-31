@@ -1,5 +1,5 @@
 body {
- background: url('test6blå.jpg') no-repeat center center fixed;
+ background: url('background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
      -moz-background-size: cover;
         background-size: cover;
@@ -9,8 +9,8 @@ body {
 
 
 h1{
-    margin-top:0.2em;
-    margin-bottom: 1em;
+    margin-top:20px;
+    margin-bottom: 40px;
     font-family: Rockwell, Comic Sans, Arial;
     font-weight: normal;
     color:#002408;
@@ -18,6 +18,27 @@ h1{
 
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
+nav {
+  margin-top: 40px;
+  padding: 24px;
+  text-align: center;
+  font-family: helvetica;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.link-3 {
+  transition: 0.4s;
+  color: #ffffff;
+  font-size: 30px;
+  text-decoration: none;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+.link-3:hover {
+  background-color: #a4c778;
+  color: #FFFFFF;
+  padding: 24px 10px;
+}
 
 input,
 button,
@@ -48,6 +69,8 @@ form.example {
     box-sizing: border-box;
     justify-content: center;
     height: 60px;
+    margin-top: 30px
+        margin bottom: 100px
 
   }
 
@@ -59,7 +82,7 @@ form.example {
     border: 1px solid grey;
     float: left;
     width: 60%;
-    background: #f1f1f1;
+    background: #ecece7;
   }
 
   /* Style the submit button */
@@ -67,16 +90,16 @@ form.example {
     float: left;
     width: 10%;
     height: 60px;
-    background: #45e52b;
+    background: #637d96;
     color: black;
     font-size: 30px;
-    border: 1px solid grey;
+    border: 1px solid #191e28;
     border-left: none; /* Prevent double borders */
     cursor: pointer;
   }
 
   form.example button:hover {
-    background: #45e52b;
+    background: #193153;
     -webkit-filter: brightness(80%);
   }
 
@@ -104,20 +127,11 @@ nav {
 
 }
 #nav-3 {
-  background: #C5DBC5;
+  background: #005e83;
   text-align: left;
 }
 /* classes */
 
-
-.link-3 {
-  transition: 0.4s;
-  color: #ffffff;
-  font-size: 30px;
-  text-decoration: none;
-  padding: 0 10px;
-  margin: 0 10px;
-}
 
 .link-3 {
   color: #ffffff;
@@ -126,6 +140,8 @@ nav {
   padding: 14px 16px;
   margin: 0px 0px;
   display: inline-block;
+  transition: 1.5s;
+  border-radius:3px;
 }
 .link-3:hover {
   background-color: #ffffff;
@@ -141,6 +157,8 @@ nav {
   margin: 0px 0px;
   display: inline-block;
   cursor: pointer;
+  transition: 1.5s;
+  border-radius:3px;
 }
 
 .popup:hover {
@@ -205,3 +223,6 @@ width: flex;
     justify-content: center;
 }
 
+.table table-striped{
+margin-top: 60px
+}

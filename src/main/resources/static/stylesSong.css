@@ -1,21 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
 body {
-  background: url('test3.jpg') no-repeat center center fixed;
-      -webkit-background-size: cover;
-       -moz-background-size: cover;
-          background-size: cover;
-          -o-background-size: cover;
-  font-family: Helvetica;
-  margin: 0px;
+ background: url('background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+     -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        margin: 0px;
 }
 
+
+/*   TAS BORT
 h1{
-    margin-top:0.2em;
-    margin-bottom: 1em;
+    margin-top:20px;
+    margin-bottom: 20px;
     font-weight: normal;
     color:#4a4a4a;
-}
+}  */
 
 nav {
   margin-top: 40px;
@@ -26,7 +27,7 @@ nav {
 }
 
 #nav-3 {
-  background: #26580f;
+  background: #005e83;
   display: flex;
   justify-content: center;
 }
@@ -46,6 +47,37 @@ nav {
   padding: 24px 10px;
 }
 
+
+
+<style>
+       div {
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin: 20px;
+            background-color: antiquewhite;
+        }
+
+@media (max-width: 500px) {
+            .misc {
+                display: none;
+            }
+        }
+
+        @media (min-width: 500px) {
+            body {
+                background-color: ##ecece7;
+            }
+
+            div {
+                background-color: #ecece7;
+
+            }
+        }
+
+</style>
+
+
+
 .logo{
  font-size: 50px;
  display: flex;
@@ -55,15 +87,16 @@ nav {
 form.analyse {
  display: flex;
  justify-content: center;
+     margin top: 100px
+     margin bottom: 40px;
 }
 
 form.analyse button {
     display: flex;
-    align-items: center;
-    padding: 24px 23px;
+    justify-content: center;
     width: 200px;
     height: 50px;
-    background: #a4c778;
+    background: #42698c;
     color: white;
     name: Analyse;
     font-size: 20px;
@@ -73,7 +106,7 @@ form.analyse button {
 
   }
     form.analyse button:hover {
-    background: #378214;
+    background: #193153	;
   }
 
 .coverPhoto {
@@ -93,4 +126,5 @@ form.analyse button {
 .content {
 display: flex;
    padding: 24px 30px;
+   margin-bottom: 30px;
 }
