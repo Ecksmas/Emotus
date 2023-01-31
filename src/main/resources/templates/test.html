@@ -6,30 +6,39 @@
 </head>
 <body>
 <div class="container">
-  <form>
-    <div class="form-group">
-      <label for="keyword">Keyword:</label>
-      <input type="text" class="form-control" id="keyword" placeholder="Enter keyword" th:value="${keyword}">
-    </div>
-    <button type="submit" class="btn btn-primary">Search</button>
-  </form>
+    <form th:action="@{/}" th:method="get">
+        <div class="form-group">
+            <label for="keyword">Keyword:</label>
+            <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Enter keyword"
+                   th:value="${keyword}">
+        </div>
+        <button type="submit">Search</button>
+    </form>
 
-  <br>
+    <br>
 
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th>Title</th>
-      <th>Artist</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="song : ${songList}">
-      <td th:text="${song.title}"></td>
-      <td th:text="${song.artist}"></td>
-    </tr>
-    </tbody>
-  </table>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Artist</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="song : ${songList}">
+            <td>
+                <a th:href="@{/song(id=${song.songId})}" style="display:block;">
+                    <span th:text="${song.artist}"></span>
+                </a>
+            </td>
+          <td>
+            <a th:href="@{/song(id=${song.songId})}" style="display:block;">
+              <span th:text="${song.title}"></span>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 </body>
