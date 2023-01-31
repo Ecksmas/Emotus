@@ -75,14 +75,14 @@ function teamPopup() {
 </script>
 <br>
 
-<table class="table table-striped">
-    <thead>
+<table class="table">
+    <span>
     <tr>
         <th>Title</th>
         <th>Artist</th>
     </tr>
-    </thead>
-    <tbody>
+    </span>
+    <span>
     <tr th:each="song : ${songList}">
         <td>
             <a th:href="@{/song(id=${song.songId})}" style="display:block;">
@@ -95,7 +95,7 @@ function teamPopup() {
             </a>
         </td>
     </tr>
-    </tbody>
+    </span>
 </table>
 </div>
 
