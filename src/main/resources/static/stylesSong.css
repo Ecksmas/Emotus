@@ -19,35 +19,102 @@ h1{
 }  */
 
 nav {
-  margin-top: 40px;
-  padding: 24px;
-  text-align: center;
-  font-family: Helvetica;
+  margin-top: 2px;
+  padding: 3px;
+  text-align: right;
+  font-family: helvetica;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
-
 #nav-3 {
   background: #005e83;
-  display: flex;
-  justify-content: center;
+  text-align: left;
 }
 
 .link-3 {
-  transition: 0.4s;
   color: #ffffff;
-  font-size: 30px;
+  font-size: 15px;
   text-decoration: none;
-  padding: 0 10px;
-  margin: 0 10px;
+  padding: 14px 16px;
+  margin: 0px 0px;
+  display: inline-block;
+  transition: 1.5s;
+  border-radius:3px;
 }
-
 .link-3:hover {
   background-color: #ffffff;
   color: #000000;
-  padding: 24px 10px;
+}
+
+/* Popup link */
+.popup {
+  color: #ffffff;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 14px 16px;
+  margin: 0px 0px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 1.5s;
+  border-radius:3px;
 }
 
 
+.popup:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* The popup window */
+.popup .popuptext {
+width: flex;
+  padding: 10px 10px;
+  color: #fff;
+  text-align: center;
+  border-radius:3px;
+  background-color: #555;
+  visibility: hidden;
+  position:fixed;
+  left: 50%;
+  top: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -moz-transform:translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    text-color: white;
+  }
+  .popup .close:hover {
+    color: white;
+  }
+}
+/*end of popup*/
 
 <style>
        div {
