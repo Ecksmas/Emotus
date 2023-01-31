@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+   <link rel="stylesheet" href="analysedText.css">
+
+    <title>Emotus</title>
 </head>
 <body>
-<p th:text="${sentimentText}"></p>
-<p th:text="${subjectivityText}"></p>
+<nav id="nav-3">
+    <a class="link-3" href="#">About</a>
+    <a class="link-3" href="#">GitHub</a>
+    <a class="link-3" href="#">The
+        Team</a>
+</nav>
+<div>
+    <div class="logo">
+        <h1>Emotus</h1>
+    </div>
+
+<div class = "analyse">
+    <span class ="sentiment">Sentiment:&nbsp;
+<span  th:text="${sentimentText}"></span></span>
+    <span class = "subjectivity">Subjectivity:&nbsp;
+<span  th:text="${subjectivityText}"></span></span>
+
+   <article class ="picture"> <img id= "image" src="/flowers.jpg" alt="Happy">
+   </article>
+</div>
+</div>
 </body>
 </html>

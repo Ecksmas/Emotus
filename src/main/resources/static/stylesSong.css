@@ -1,5 +1,13 @@
 body {
-  background-color: #D5EED5;
+  /*background-color: #D5EED5;*/
+  background: url('test3.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover;
+       -moz-background-size: cover;
+          background-size: cover;
+          -o-background-size: cover;
+
+
+  font-family: Helvetica;
 }
 
 
@@ -14,16 +22,19 @@ h1{
 body {
   margin: 0px;
 }
+
 nav {
   margin-top: 40px;
   padding: 24px;
   text-align: center;
-  font-family: helvetica;
+  font-family: Helvetica;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 #nav-3 {
-  background: #C5DBC5;
+  background: #26580f;
+   display: flex;
+          justify-content: center;
 }
 
 
@@ -35,72 +46,61 @@ nav {
   padding: 0 10px;
   margin: 0 10px;
 }
+
 .link-3:hover {
   background-color: #ffffff;
   color: #000000;
   padding: 24px 10px;
 }
 
-body,
-input,
-button,
-label{
-    font-family: Helvetica;
-}
-
-/* classes */
-
 .logo{
-    font-size: 70px;
+    font-size: 50px;
     display: flex;
     justify-content: center;
 }
 
-.search-wrapper
-  {
-      display: flex;
-      justify-content: center;
-  }
+form.analyse {
+display: flex;
+    justify-content: center;
+}
 
-
-form.example {
+form.analyse button {
     display: flex;
     align-items: center;
-    box-sizing: border-box;
-    justify-content: center;
-  }
-
-  /* Style the search field */
-  form.example input[type=text] {
-    height: 60px;
-    margin-left: 20px;
-    font-size: 30px;
-    border: 1px solid grey;
-    float: left;
-    width: 60%;
-    background: #f1f1f1;
-  }
-
-  /* Style the submit button */
-  form.example button {
-    float: left;
-    width: 10%;
-    height: 65px;
-    background: #2bbb1b;
+    padding: 24px 23px;
+    width: 200px;
+    height: 50px;
+    background: #a4c778;
     color: white;
-    font-size: 30px;
-    border: 1px solid grey;
+    name: Analyse;
+    font-size: 20px;
+
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+
+    border: solid 1px grey;
     border-left: none; /* Prevent double borders */
     cursor: pointer;
   }
-
-  form.example button:hover {
-    background: #0b7dda;
+  form.analyse button:hover {
+    background: #378214;
   }
 
-  /* Clear floats */
-  form.example::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
+.coverPhoto {
+     display: flex;
+    justify-content: center;
+    padding: 30px 10px;
+
+}
+
+.songTitle {
+   padding: 24px 30px;
+
+}
+.artistName {
+   padding: 24px 20px;
+}
+
+.content {
+display: flex;
+   padding: 24px 30px;
+}
