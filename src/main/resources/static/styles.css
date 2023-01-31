@@ -31,20 +31,6 @@ nav {
 }
 
 
-.link-3 {
-  transition: 0.4s;
-  color: #ffffff;
-  font-size: 30px;
-  text-decoration: none;
-  padding: 0 10px;
-  margin: 0 10px;
-}
-.link-3:hover {
-  background-color: #a4c778;
-  color: #FFFFFF;
-  padding: 24px 10px;
-}
-
 input,
 button,
 label{
@@ -133,6 +119,16 @@ nav {
   text-align: left;
 }
 /* classes */
+
+
+.link-3 {
+  transition: 0.4s;
+  color: #ffffff;
+  font-size: 30px;
+  text-decoration: none;
+  padding: 0 10px;
+  margin: 0 10px;
+}
 
 .link-3 {
   color: #ffffff;
