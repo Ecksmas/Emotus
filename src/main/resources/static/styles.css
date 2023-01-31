@@ -111,21 +111,14 @@ nav {
 
 
 .link-3 {
-  transition: 0.4s;
-  color: #ffffff;
-  font-size: 30px;
-  text-decoration: none;
-  padding: 0 10px;
-  margin: 0 10px;
-}
-
-.link-3 {
   color: #ffffff;
   font-size: 15px;
   text-decoration: none;
   padding: 14px 16px;
   margin: 0px 0px;
   display: inline-block;
+  transition: 1.5s;
+  border-radius:3px;
 }
 .link-3:hover {
   background-color: #ffffff;
@@ -141,6 +134,8 @@ nav {
   margin: 0px 0px;
   display: inline-block;
   cursor: pointer;
+  transition: 1.5s;
+  border-radius:3px;
 }
 
 .popup:hover {
