@@ -80,7 +80,7 @@ form.example {
     -webkit-filter: brightness(80%);
   }
 
-  .table{
+  table{
   display: flex;
   justify-content: center;
   font-size: 25px;
