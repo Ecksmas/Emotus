@@ -40,7 +40,6 @@ function teamPopup() {
   var popup = document.getElementById("tePopup");
   popup.classList.toggle("show");
 }
-
 </script>
 
 
@@ -52,26 +51,7 @@ function teamPopup() {
     <div class="logo">
         <b><h1>Emotus</h1></b>
     </div>
-
-    <!--<div class="search-wrapper">
-        <div class="box">
-            <form th:action="@{/song}">
-                <input type="search" name="key" id="keyword" size="50" placeholder="Type to search"/>
-        </div> &nbsp;
-        <div class="search-button">
-            <input class="submit-button" type="submit" value="Search" data-search/>
-        </div> &nbsp;
-        </form>
-    </div>-->
 </div>
-<!--<div class="user-cards" data-user-cards-container></div>-->
-<!--<template>-->
-<!--    <div class="card">-->
-<!--        <div class="header"></div>-->
-<!--        <div class="body"></div>-->
-<!--    </div>-->
-<!--</template>-->
-
 <br>
 
 <!-- The form -->
@@ -79,7 +59,11 @@ function teamPopup() {
 
     <input type="search" placeholder="Type to search" name="key" id="keyword" size="50"/>
 <!--    <button type="submit"><i data-text="fa fa-search" ></i></button>-->
-<button id="snap" type="submit"><i data-text="Search">Search <i style="visibility: hidden" id="spinner" class="fa fa-spinner fa-spin"></i></i> </button>
+<button id="snap" type="submit">
+    <i data-text="Search">
+        Search <i style="visibility: hidden" id="spinner" class="fa fa-spinner fa-spin">
+
+    </i></i> </button>
 
     <script>
     const targetDiv = document.getElementById("spinner");

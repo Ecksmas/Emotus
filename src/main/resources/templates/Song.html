@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="stylesSong.css">
+    <link rel="stylesheet" href="/stylesSong.css">
     <title>Emotus</title>
 </head>
 <body>
@@ -12,22 +12,9 @@
     <a class="link-3" href="#">The
         Team</a>
 </nav>
-<div>
-    <div class="logo">
-        <h1>Emotus</h1>
-    </div>
-</div>
-<form th:action="@{/Text}">
-    <input type="submit" value="Analyse Text"/>
-</form>
-
-<br>
-<br>
-<br>
-<span class="coverPhoto">
-    <img th:src="${songImg}" style="width:25%;">
-</span>
-
+<a class="coverPhoto">
+    <img th:src="${songImg}" style="width:40%;">
+</a>
 
 <style>
        div {
@@ -55,8 +42,6 @@
         }
 
 </style>
-
-
 <br>
 <div>
     <span class="songTitle">
@@ -65,21 +50,17 @@
      <span class="artistName">
         <a><b>Artist: </b></a>
     <a th:text="${artistResult}">Artist:</a>
-    <span/>
+    </span>
      </span>
 </div>
 
 <div class="content">
     <p th:text="${lyricsResult}"></p>
 </div>
-<br>
 
 <form class="analyse" th:action="@{/Text}">
-    <!--    <input  value="Analyse Text"/>-->
-    <button type="submit">Analyse songtext</button>
+    <button type="submit">Analyse text</button>
 </form>
-<br>
-<br>
 <br>
 <br>
 <br>

@@ -1,44 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="script.js" defer></script>
+    <title>Index</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon"> <!--ikon till webbläsaren-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<div class="container">
-    <form th:action="@{/}" th:method="get">
-        <div class="form-group">
-            <label for="keyword">Keyword:</label>
-            <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Enter keyword"
-                   th:value="${keyword}">
+<nav id="nav-3">
+    <a class="link-3" href="/">Emotus</a>
+
+    <div class="popup" onclick="aboutPopup()">About
+        <div class="popuptext" id="abPopup">
+            <a class="close" href="#">×</a>
+            Information about Emotus, Information about Emotus
         </div>
-        <button type="submit">Search</button>
-    </form>
+    </div>
 
-    <br>
+    <div class="popup" onclick="teamPopup()">The Team
+        <div class="popuptext" id="tePopup">
+            <a class="close" href="#">×</a>
+            Team text, Team text, Team text, Team text <br> Team text,Team text, Team text
+        </div>
+    </div>
+    <a class="link-3" href="https://github.com/Ecksmas/Emotus">GitHub</a>
+</nav>
 
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>Title</th>
-            <th>Artist</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="song : ${songList}">
-            <td>
-                <a th:href="@{/song(id=${song.songId})}" style="display:block;">
-                    <span th:text="${song.artist}"></span>
-                </a>
-            </td>
-          <td>
+<script>
+function aboutPopup() {
+  var popup = document.getElementById("abPopup");
+  popup.classList.toggle("show");
+}
+function teamPopup() {
+  var popup = document.getElementById("tePopup");
+  popup.classList.toggle("show");
+}
+
+</script>
+<br>
+<br>
+<br>
+<br>
+<div>
+    <div class="logo">
+        <b><h1>Emotus</h1></b>
+    </div>
+</div>
+<br>
+
+
+<form class="example" th:action="@{/}" th:method="get">
+    <input type="search" size="50" class="form-control" id="keyword" name="keyword" placeholder="Type to search"
+           th:value="${keyword}">
+    <button id="snap" type="submit">
+        <i data-text="Search">Search
+            <i style="visibility: hidden" id="spinner" class="fa fa-spinner fa-spin">
+            </i>
+        </i>
+    </button>
+</form>
+<script>
+    const targetDiv = document.getElementById("spinner");
+    const btn = document.getElementById("snap");
+    btn.onclick = function () {
+        targetDiv.style.visibility = "visible";
+    }
+
+
+</script>
+<br>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Artist</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="song : ${songList}">
+        <td>
             <a th:href="@{/song(id=${song.songId})}" style="display:block;">
-              <span th:text="${song.title}"></span>
+                <span th:text="${song.artist}"></span>
             </a>
-          </td>
-        </tr>
-        </tbody>
-    </table>
+        </td>
+        <td>
+            <a th:href="@{/song(id=${song.songId})}" style="display:block;">
+                <span th:text="${song.title}"></span>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
 </div>
 
 </body>

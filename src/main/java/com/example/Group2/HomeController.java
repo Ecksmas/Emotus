@@ -125,11 +125,12 @@ public class HomeController {
 
         HttpResponse<String> sentimentResult = Unirest.post("https://sentiment-analysis46.p.rapidapi.com/sentiment")
                 .header("content-type", "application/json")
-                .header("X-RapidAPI-Key", "7228fd083cmshf3813a6be37c56fp122391jsn974535b54c88")
+                .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
                 .header("X-RapidAPI-Host", "sentiment-analysis46.p.rapidapi.com")
                 .body("{\r\n    \"text\": \"" + text + "\",\r\n    \"spell_check\": true,\r\n    \"keywords\": true\r\n}")
                 .asString();
 
+        System.out.println(sentimentResult.getBody());
 
         JSONObject json = new JSONObject(sentimentResult.getBody());
 
