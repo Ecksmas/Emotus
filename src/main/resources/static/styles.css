@@ -26,20 +26,6 @@ nav {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-.link-3 {
-  transition: 0.4s;
-  color: #ffffff;
-  font-size: 30px;
-  text-decoration: none;
-  padding: 0 10px;
-  margin: 0 10px;
-}
-.link-3:hover {
-  background-color: #a4c778;
-  color: #FFFFFF;
-  padding: 24px 10px;
-}
-
 input,
 button,
 label{
