@@ -6,16 +6,15 @@
     <title>Emotus</title>
 </head>
 <body>
+
 <nav id="nav-3">
     <a class="link-3" href="/">Home</a>
-
     <div class="popup" onclick="aboutPopup()">About
         <div class="popuptext" id="abPopup">
             <a class="close" href="#">×</a>
             Information about Emotus, Information about Emotus
         </div>
     </div>
-
     <div class="popup" onclick="teamPopup()">The Team
         <div class="popuptext" id="tePopup">
             <a class="close" href="#">×</a>
@@ -24,7 +23,7 @@
     </div>
     <a class="link-3" href="https://github.com/Ecksmas/Emotus">GitHub</a>
 </nav>
-
+<a class="coverPhoto">    <img th:src="${songImg}" style="width:40%;"></a>
 <script>
 function aboutPopup() {
   var popup = document.getElementById("abPopup");
