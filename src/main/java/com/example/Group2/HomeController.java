@@ -114,8 +114,6 @@ public class HomeController {
                 .body("{\r\n    \"text\": \"" + text + "\",\r\n    \"spell_check\": true,\r\n    \"keywords\": true\r\n}")
                 .asString();
 
-        System.out.println(sentimentResult.getBody());
-
         JSONObject json = new JSONObject(sentimentResult.getBody());
 
         String sentimentText = json.getString("sentiment");
