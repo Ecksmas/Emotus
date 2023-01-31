@@ -31,7 +31,7 @@ public class HomeController {
         int resultPerPage = 1;
 
         HttpResponse<String> songIdResponse = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=" + keyword + "&per_page=" + resultPerPage + "&page=1")
-                .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
+                .header("X-RapidAPI-Key", "7228fd083cmshf3813a6be37c56fp122391jsn974535b54c88")
                 .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
                 .asString();
 
@@ -125,7 +125,7 @@ public class HomeController {
 
         HttpResponse<String> sentimentResult = Unirest.post("https://sentiment-analysis46.p.rapidapi.com/sentiment")
                 .header("content-type", "application/json")
-                .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
+                .header("X-RapidAPI-Key", "7228fd083cmshf3813a6be37c56fp122391jsn974535b54c88")
                 .header("X-RapidAPI-Host", "sentiment-analysis46.p.rapidapi.com")
                 .body("{\r\n    \"text\": \"" + text + "\",\r\n    \"spell_check\": true,\r\n    \"keywords\": true\r\n}")
                 .asString();
@@ -136,13 +136,6 @@ public class HomeController {
         String sentimentText = json.getString("sentiment");
         String subjectivityText = json.getString("subjectivity");
 
-        //Test
-        System.out.println(sentimentText+sentimentResult);
-
-        /*
-        String sentimentText = StringUtils.substringBetween(sentimentResultBody, "\"sentiment\": \"", "\", \"");
-        String subjectivityText = StringUtils.substringBetween(sentimentResultBody, "subjectivity\": \"", "\", \"");
-         */
 
         model.addAttribute("sentimentText", sentimentText);
         model.addAttribute("subjectivityText", subjectivityText);
