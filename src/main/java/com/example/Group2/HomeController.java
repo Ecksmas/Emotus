@@ -23,25 +23,9 @@ public class HomeController {
     String endLyrics;
 
 
-    /*
+
     @GetMapping("/")
-    public String viewHomePage(Model model, @Param("keyword") String keyword) {
-        model.addAttribute("keyword", keyword);
-
-        int resultPerPage = 1;
-
-        HttpResponse<String> songIdResponse = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=" + keyword + "&per_page=" + resultPerPage + "&page=1")
-                .header("X-RapidAPI-Key", "7228fd083cmshf3813a6be37c56fp122391jsn974535b54c88")
-                .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
-                .asString();
-
-        model.addAttribute("Result", songIdResponse.getBody());
-
-        return "Index";
-    }
-    */
-    @GetMapping("/")
-    public String viewHomePage(Model model, @RequestParam(required = false, defaultValue = "happy") String keyword) {
+    public String viewHomePage(Model model, @RequestParam(required = false, defaultValue = "") String keyword) {
 
         int resultPerPage = 5;
 
@@ -129,8 +113,6 @@ public class HomeController {
                 .header("X-RapidAPI-Host", "sentiment-analysis46.p.rapidapi.com")
                 .body("{\r\n    \"text\": \"" + text + "\",\r\n    \"spell_check\": true,\r\n    \"keywords\": true\r\n}")
                 .asString();
-
-        System.out.println(sentimentResult.getBody());
 
         JSONObject json = new JSONObject(sentimentResult.getBody());
 
