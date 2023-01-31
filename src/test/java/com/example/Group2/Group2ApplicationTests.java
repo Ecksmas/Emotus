@@ -24,7 +24,7 @@ class Group2ApplicationTests {
 
 		// Connection & response
 		HttpResponse<String> songIdResponse = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=happy&per_page=5&page=1")
-				.header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
+				.header("X-RapidAPI-Key", "7228fd083cmshf3813a6be37c56fp122391jsn974535b54c88")
 				.header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
 				.asString();
 

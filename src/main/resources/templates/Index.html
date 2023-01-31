@@ -5,10 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <script src="script.js" defer></script>
     <title>Index</title>
     <link rel="shortcut icon" href="icon.png" type="image/x-icon"> <!--ikon till webbläsaren-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <nav id="nav-3">
@@ -72,13 +73,25 @@ function teamPopup() {
 <!--</template>-->
 
 <br>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- The form -->
 <form class="example" th:action="@{/song}">
 
     <input type="search" placeholder="Type to search" name="key" id="keyword" size="50"/>
-    <button type="submit"><i class="fa fa-search"></i></button>
+<!--    <button type="submit"><i data-text="fa fa-search" ></i></button>-->
+<button id="snap" type="submit"><i data-text="Search">Search <i style="visibility: hidden" id="spinner" class="fa fa-spinner fa-spin"></i></i> </button>
+
+    <script>
+    const targetDiv = document.getElementById("spinner");
+    const btn = document.getElementById("snap");
+    btn.onclick = function () {
+        targetDiv.style.visibility = "visible";
+    }
+
+  </script>
+
+
+
 </form>
 
 </body>

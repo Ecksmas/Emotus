@@ -4,7 +4,9 @@ body {
      -moz-background-size: cover;
         background-size: cover;
         -o-background-size: cover;
+        margin: 0px;
 }
+
 
 h1{
     margin-top:0.2em;
@@ -15,9 +17,7 @@ h1{
 }
 
 @import url(https://fonts.googleapis.com/css?family=Raleway);
-body {
-  margin: 0px;
-}
+
 nav {
   margin-top: 40px;
   padding: 24px;
@@ -52,11 +52,13 @@ label{
     background-color: #D5EED5;
     margin: 0px;
 }
-h1{
-    margin-top:0.1em;
-    margin-bottom: 1em;
-    font-weight: normal;
-    color:#4a4a4a;
+
+/* classes */
+
+.logo{
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
 }
 
 .search-wrapper
@@ -77,22 +79,22 @@ form.example {
 
   /* Style the search field */
   form.example input[type=search] {
-    height: 80px;
+    height: 60px;
     margin-left: 20px;
     font-size: 30px;
     border: 1px solid grey;
     float: left;
     width: 60%;
-    background: #fafafa;
+    background: #f1f1f1;
   }
 
   /* Style the submit button */
   form.example button {
     float: left;
-    width: 6%;
-    height: 80px;
-    background: #a4c778;
-    color: white;
+    width: 10%;
+    height: 60px;
+    background: #45e52b;
+    color: black;
     font-size: 30px;
     border: 1px solid grey;
     border-left: none; /* Prevent double borders */
@@ -100,7 +102,8 @@ form.example {
   }
 
   form.example button:hover {
-    background: #0b7dda;
+    background: #45e52b;
+    -webkit-filter: brightness(80%);
   }
 
   /* Clear floats */

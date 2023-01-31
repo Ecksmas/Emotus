@@ -10,13 +10,13 @@ body {
   font-family: Helvetica;
 }
 
+
 h1{
     margin-top:0.2em;
     margin-bottom: 1em;
     font-weight: normal;
-    color:#002408;
+    color:#4a4a4a;
 }
-
 
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 body {
