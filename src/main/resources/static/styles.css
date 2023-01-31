@@ -88,8 +88,8 @@ form.example {
     float: left;
     width: 10%;
     height: 60px;
-    background: #2196F3;
-    color: white;
+    background: #45e52b;
+    color: black;
     font-size: 30px;
     border: 1px solid grey;
     border-left: none; /* Prevent double borders */
@@ -97,8 +97,10 @@ form.example {
   }
 
   form.example button:hover {
-    background: #0b7dda;
+    background: #45e52b;
+    -webkit-filter: brightness(80%);
   }
+
 
   /* Clear floats */
   form.example::after {
