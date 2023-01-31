@@ -1,4 +1,50 @@
-body,
+body {
+ background: url('test6blå.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+     -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+}
+
+h1{
+    margin-top:0.2em;
+    margin-bottom: 1em;
+    font-family: Rockwell, Comic Sans, Arial;
+    font-weight: normal;
+    color:#002408;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+body {
+  margin: 0px;
+}
+nav {
+  margin-top: 40px;
+  padding: 24px;
+  text-align: center;
+  font-family: helvetica;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+#nav-3 {
+  background: #0f4c64	;
+}
+
+
+.link-3 {
+  transition: 0.4s;
+  color: #ffffff;
+  font-size: 30px;
+  text-decoration: none;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+.link-3:hover {
+  background-color: #a4c778;
+  color: #FFFFFF;
+  padding: 24px 10px;
+}
+
 input,
 button,
 label{
@@ -13,6 +59,13 @@ h1{
     color:#4a4a4a;
 }
 
+.search-wrapper
+  {
+      display: flex;
+      justify-content: center;
+  }
+
+
 form.example {
     display: flex;
     align-items: center;
@@ -24,21 +77,21 @@ form.example {
 
   /* Style the search field */
   form.example input[type=search] {
-    height: 60px;
+    height: 80px;
     margin-left: 20px;
     font-size: 30px;
     border: 1px solid grey;
     float: left;
     width: 60%;
-    background: #f1f1f1;
+    background: #fafafa;
   }
 
   /* Style the submit button */
   form.example button {
     float: left;
-    width: 10%;
-    height: 60px;
-    background: #2196F3;
+    width: 6%;
+    height: 80px;
+    background: #a4c778;
     color: white;
     font-size: 30px;
     border: 1px solid grey;
@@ -157,8 +210,3 @@ width: flex;
     justify-content: center;
 }
 
-.search-wrapper
- {
-      display: flex;
-      justify-content: center;
- }
