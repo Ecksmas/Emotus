@@ -5,17 +5,43 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <script src="script.js" defer></script>
     <title>Index</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon"> <!--ikon till webbläsaren-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <nav id="nav-3">
-    <a class="link-3" href="#">About</a>
-    <a class="link-3" href="#">GitHub</a>
-    <a class="link-3" href="#">The
-        Team</a>
+    <a class="link-3" href="/">Emotus</a>
+
+    <div class="popup" onclick="aboutPopup()">About
+        <div class="popuptext" id="abPopup">
+            <a class="close" href="#">×</a>
+            Information about Emotus, Information about Emotus
+        </div>
+    </div>
+
+    <div class="popup" onclick="teamPopup()">The Team
+        <div class="popuptext" id="tePopup">
+            <a class="close" href="#">×</a>
+            Team text, Team text, Team text, Team text <br> Team text,Team text, Team text
+        </div>
+    </div>
+    <a class="link-3" href="https://github.com/Ecksmas/Emotus">GitHub</a>
 </nav>
+
+<script>
+function aboutPopup() {
+  var popup = document.getElementById("abPopup");
+  popup.classList.toggle("show");
+}
+function teamPopup() {
+  var popup = document.getElementById("tePopup");
+  popup.classList.toggle("show");
+}
+</script>
+
 
 <br>
 <br>
@@ -25,39 +51,32 @@
     <div class="logo">
         <b><h1>Emotus</h1></b>
     </div>
-
-    <!--<div class="search-wrapper">
-        <div class="box">
-            <form th:action="@{/song}">
-                <input type="search" name="key" id="keyword" size="50" placeholder="Type to search"/>
-        </div> &nbsp;
-        <div class="search-button">
-            <input class="submit-button" type="submit" value="Search" data-search/>
-        </div> &nbsp;
-        </form>
-    </div>-->
 </div>
-<!--<div class="user-cards" data-user-cards-container></div>-->
-<!--<template>-->
-<!--    <div class="card">-->
-<!--        <div class="header"></div>-->
-<!--        <div class="body"></div>-->
-<!--    </div>-->
-<!--</template>-->
-
 <br>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- The form -->
 <form class="example" th:action="@{/song}">
 
     <input type="search" placeholder="Type to search" name="key" id="keyword" size="50"/>
-    <button type="submit"><i class="fa fa-search"></i></button>
+<!--    <button type="submit"><i data-text="fa fa-search" ></i></button>-->
+<button id="snap" type="submit">
+    <i data-text="Search">
+        Search <i style="visibility: hidden" id="spinner" class="fa fa-spinner fa-spin">
+
+    </i></i> </button>
+
+    <script>
+    const targetDiv = document.getElementById("spinner");
+    const btn = document.getElementById("snap");
+    btn.onclick = function () {
+        targetDiv.style.visibility = "visible";
+    }
+
+  </script>
+
+
+
 </form>
-
-</body>
-</html>
-
 
 </body>
 </html>

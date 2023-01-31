@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="stylesSong.css">
+    <link rel="stylesheet" href="/stylesSong.css">
     <title>Emotus</title>
 </head>
 <body>
@@ -13,19 +12,9 @@
     <a class="link-3" href="#">The
         Team</a>
 </nav>
-<!--<div>-->
-<!--    <div class="logo">-->
-<!--        <h1>Emotus</h1>-->
-<!--    </div>-->
-<!--</div>-->
-
-<br>
-<br>
-<br>
-<span class="coverPhoto">
-    <img th:src="${songImg}" style="width:25%;" >
-</span>
-
+<a class="coverPhoto">
+    <img th:src="${songImg}" style="width:40%;">
+</a>
 
 <style>
        div {
@@ -51,37 +40,31 @@
                 background-color: white
             }
         }
-    </style>
 
-
+</style>
 <br>
 <div>
-<span class="songTitle">
+    <span class="songTitle">
     <a><b>Song: </b></a>
-    <a th:text="${songTitle}">Song title:</a>
-    <span class="artistName">
-    <a><b>Artist: </b></a>
-    <a th:text="${artistName}">Artist:</a>
+    <a th:text="${titleResult}">Song title:</a>
+     <span class="artistName">
+        <a><b>Artist: </b></a>
+    <a th:text="${artistResult}">Artist:</a>
     </span>
-</span>
+     </span>
 </div>
 
 <div class="content">
-    <p th:text="${ID}"></p>
+    <p th:text="${lyricsResult}"></p>
 </div>
-<br>
 
 <form class="analyse" th:action="@{/Text}">
-    <!--    <input  value="Analyse Text"/>-->
-    <button type="submit">Analyse songtext</button>
+    <button type="submit">Analyse text</button>
 </form>
 <br>
 <br>
 <br>
 <br>
 <br>
-<br>
-<br>
-
 </body>
 </html>
