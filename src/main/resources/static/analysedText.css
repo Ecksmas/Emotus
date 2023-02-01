@@ -1,19 +1,23 @@
-body {
-  background-color: #D5EED5;
-   font-family: Helvetica;
+ body {
+ background: url('background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+     -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        margin: 0px;
 }
 
 /* classes */
 h1{
-    margin-top:0.2em;
-    margin-bottom: 1em;
-    font-weight: normal;
-    color:#4a4a4a;
+    margin-top:20px;
+       margin-bottom: 40px;
+       font-family: Rockwell, Comic Sans, Arial;
+       font-weight: normal;
+       color:#002408;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Raleway);
-body {
-  margin: 0px;
+
 }
 nav {
   margin-top: 40px;
@@ -37,8 +41,8 @@ nav {
   margin: 0 10px;
 }
 .link-3:hover {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #a4c778;
+  color: #FFFFFF;
   padding: 24px 10px;
 }
 .logo{
