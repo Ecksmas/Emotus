@@ -121,18 +121,20 @@ width: flex;
 }
 /*end of popup*/
 .sentiment{
- font-size: 30px;
+ font-size: 40px;
     display: flex;
     padding: 10px 10px;
     align-items:baseline;
+    font-weight: 700;
 
 }
 
 .subjectivity{
- font-size: 30px;
+ font-size: 40px;
  display: flex;
  padding: 10px 10px;
  align-items:baseline;
+ font-weight: 700;
 
 }
 
