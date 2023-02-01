@@ -45,43 +45,38 @@ nav {
   color: #FFFFFF;
   padding: 24px 10px;
 }
-.logo{
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-}
-
-.analyse{
-    /*font-size: 30px;
-    display: flex;
-    justify-content: center;
-*/
-}
 
 .sentiment{
  font-size: 30px;
     display: flex;
-   justify-content: flex-start;
+    padding: 10px 10px;
+    align-items:baseline;
 
 }
 
 .subjectivity{
  font-size: 30px;
  display: flex;
-  justify-content: flex-start;
-font-style
+ padding: 10px 10px;
+ align-items:baseline;
+
 }
 
 .picture{
 display: flex;
-justify-content: flex-end;
-position: relative;
-top:-150px;
-left: 5px;
-width: 1200px;
-height: 500px;
+justify-content: center;
+ width: 50%
 
-transition-duration: 2s;
+
+
+}
+.container{
+display: flex;
+justify-content: center;
+
+
+
+
 
 }
 }
