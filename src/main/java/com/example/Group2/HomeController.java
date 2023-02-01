@@ -25,7 +25,7 @@ public class HomeController {
 
         try {
             HttpResponse<String> songIdResponse = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=" + keyword + "&per_page=" + resultPerPage + "&page=1")
-                    .header("X-RapidAPI-Key", "7228fd083cmshf3813a6be37c56fp122391jsn974535b54c88")
+                    .header("X-RapidAPI-Key", "7fdc5ae974msh4665893b2c77710p1523e0jsn4e77becb0728")
                     .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
                     .asString();
 
@@ -61,9 +61,12 @@ public class HomeController {
 
         //Grabs song title,artist and lyrics from previous page click
         HttpResponse<String> lyrics = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=" + id + "&text_format=plain")
-                .header("X-RapidAPI-Key", "7228fd083cmshf3813a6be37c56fp122391jsn974535b54c88")
+                .header("X-RapidAPI-Key", "7fdc5ae974msh4665893b2c77710p1523e0jsn4e77becb0728")
                 .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
                 .asString();
+
+        // Uncomment to see if API is maxed
+        // System.out.println(lyrics.getBody());
 
         JSONObject json = new JSONObject(lyrics.getBody());
         JSONObject result = json.getJSONObject("lyrics");
@@ -77,7 +80,7 @@ public class HomeController {
 
         //Searches for header url
         HttpResponse<String> songIdResponse = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=" + titleResult + "&per_page=5&page=1")
-                .header("X-RapidAPI-Key", "7228fd083cmshf3813a6be37c56fp122391jsn974535b54c88")
+                .header("X-RapidAPI-Key", "7fdc5ae974msh4665893b2c77710p1523e0jsn4e77becb0728")
                 .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
                 .asString();
 
