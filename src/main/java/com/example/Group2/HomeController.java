@@ -1,15 +1,9 @@
 package com.example.Group2;
 
-import com.fasterxml.jackson.databind.SerializationFeature;
 import kong.unirest.*;
 import kong.unirest.json.JSONArray;
 import kong.unirest.json.JSONObject;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -105,7 +99,10 @@ public class HomeController {
     @GetMapping("/Text")
     public String text(Model model) {
 
-        String text = endLyrics.replace("\n","");
+        String text = endLyrics.replace("\n"," ").replace("\"","");
+
+        //
+        System.out.println("Text before:" + text);
 
         HttpResponse<String> sentimentResult = Unirest.post("https://sentiment-analysis46.p.rapidapi.com/sentiment")
                 .header("content-type", "application/json")
@@ -115,6 +112,9 @@ public class HomeController {
                 .asString();
 
         JSONObject json = new JSONObject(sentimentResult.getBody());
+
+        //
+        System.out.println(sentimentResult.getBody());
 
         String sentimentText = json.getString("sentiment");
         String subjectivityText = json.getString("subjectivity");

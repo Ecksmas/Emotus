@@ -6,43 +6,43 @@ const img = [
 {file: "/verysad.jpg", description:"Very negative"},
 ]
 
-/*document.querySelector("sentiment")*/
 const sentiment = document.querySelector('.sentiment span');
 const sentimentText = sentiment.textContent;
 console.log(sentimentText);
 
-/*const imageContainer = document.querySelector('.picture');
-let imageSrc;*/
+const imageContainer = document.querySelector('#imageContainer');
+let imageSrc;
 
-function showImage(sentimentText) {
-document.getElementByClassName("sentiment").innerHTML = sentimentText;
+
+
  if (sentimentText === "very positive") {
-     img.src='/veryhappy.jpg';
-
+     imageSrc='/veryhappy.jpg';
+           } else if (sentimentText === "positive") {
+        imageSrc='/flowers.jpg';
+           } else if (sentimentText === "negative") {
+     imageSrc='/sad.jpg';
+           } else if (sentimentText === "very negative") {
+     imageSrc='/verysad.jpg';
+           } else {
+     imageSrc='/neutral.jpg';
            }
-
-/*const image = document.createElement('img');
-image.src= imageSrc;*/
-/*imageContainer.appendChild(Image);*/
-
-/*if (sentiment === "very positive"){
-
- return img.src="/veryhappy.jpg";
-
-    }
-
- if (sentimentText === "neutral") {
-      return img.src="/neutral.jpg"
-    }
-
- if (sentimentText === "negative")
-    return img.src="/sad.jpg";
-
-    }
-
- if (sentimentText === "very negative") {
-        return img.src="/verysad.jpg";
+const image = document.querySelector('.picture');
+image.src = imageSrc;
+imageContainer.appendChild(image);
 
 
-    }*/
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
