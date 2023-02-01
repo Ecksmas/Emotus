@@ -20,14 +20,15 @@ h1{
 
 /* navigation bar*/
 nav {
-  margin-top: 2px;
-  padding: 3px;
-  text-align: right;
-  font-family: helvetica;
+  position: fixed;
+  width: 100%;
+  font-family: Helvetica;
+  margin-top: 0px;
+  padding-bottom: 30 px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
 }
 #nav-3 {
+  font-family: Helvetica;
   background: #005e83;
   text-align: left;
 }
@@ -182,6 +183,7 @@ form.analyse button {
     display: flex;
     justify-content: center;
     padding: 30px 10px;
+
 }
 
 .songTitle {
