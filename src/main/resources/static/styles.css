@@ -7,6 +7,7 @@ body {
         margin: 0px;
 }
 
+
 h1{
     margin-top:20px;
     margin-bottom: 40px;
@@ -96,14 +97,13 @@ form.example {
 
 /* navigation bar*/
 nav {
-  margin-top: 2px;
-  padding: 3px;
-  text-align: right;
-  font-family: helvetica;
+  font-family: Helvetica;
+  margin-top: 0px;
+  padding: 0px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
 }
 #nav-3 {
+  font-family: Helvetica;
   background: #005e83;
   text-align: left;
 }

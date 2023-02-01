@@ -23,7 +23,7 @@
     </div>
     <a class="link-3" href="https://github.com/Ecksmas/Emotus">GitHub</a>
 </nav>
-<a class="coverPhoto">    <img th:src="${songImg}" style="width:40%;"></a>
+
 <script>
 function aboutPopup() {
   var popup = document.getElementById("abPopup");
@@ -35,21 +35,32 @@ function teamPopup() {
 }
 </script>
 
-<br>
-<div>
-    <span class="songTitle">
-    <a><b>Song: </b></a>
-    <a th:text="${titleResult}">Song title:</a>
-     <span class="artistName">
-        <a><b>Artist: </b></a>
-    <a th:text="${artistResult}">Artist:</a>
-    </span>
-     </span>
+
+<div class="row">
+    <div class="coverPhoto"><img th:src="${songImg}">
+    </div>
+
+    <div>
+        <div class="songArtist">
+            <a><b>Song: </b></a>
+            <a th:text="${titleResult}">Song title:</a>
+            <!--     <span class="artistName">-->
+            <a><b>Artist: </b></a>
+            <a th:text="${artistResult}">Artist:</a>
+            <!--    </span>-->
+        </div>
+
+
+        <div class="content">
+            <p th:text="${lyricsResult}"></p>
+        </div>
+    </div>
+
 </div>
 
-<div class="content">
-    <p th:text="${lyricsResult}"></p>
-</div>
+
+
+
 
 <form class="analyse" th:action="@{/Text}">
     <button type="submit">Analyse text</button>

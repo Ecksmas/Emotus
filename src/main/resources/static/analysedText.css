@@ -1,83 +1,158 @@
-body {
-  background-color: #D5EED5;
-   font-family: Helvetica;
+ body {
+ background: url('background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+     -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        margin: 0px;
 }
 
 /* classes */
 h1{
-    margin-top:0.2em;
-    margin-bottom: 1em;
-    font-weight: normal;
-    color:#4a4a4a;
+    margin-top:20px;
+       margin-bottom: 40px;
+       font-family: Rockwell, Comic Sans, Arial;
+       font-weight: normal;
+       color:#002408;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Raleway);
-body {
-  margin: 0px;
+
 }
+/* navigation bar*/
 nav {
-  margin-top: 40px;
-  padding: 24px;
-  text-align: center;
-  font-family: helvetica;
+  position: fixed;
+  width: 100%;
+  font-family: Helvetica;
+  margin-top: 0px;
+  padding-bottom: 30 px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
-
 #nav-3 {
-  background: #C5DBC5;
+  font-family: Helvetica;
+  background: #005e83;
+  text-align: left;
 }
 
 
 .link-3 {
-  transition: 0.4s;
   color: #ffffff;
-  font-size: 30px;
+  font-size: 15px;
   text-decoration: none;
-  padding: 0 10px;
-  margin: 0 10px;
+  padding: 14px 16px;
+  margin: 0px 0px;
+  display: inline-block;
+  transition: 1.5s;
+  border-radius:3px;
 }
 .link-3:hover {
   background-color: #ffffff;
   color: #000000;
-  padding: 24px 10px;
 }
-.logo{
+
+/* Popup link */
+.popup {
+  color: #ffffff;
+  background: #005e83;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 14px 16px;
+  margin: 0px 0px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 1.5s;
+  border-radius:3px;
+}
+
+
+.popup:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* The popup window */
+.popup .popuptext {
+width: flex;
+  padding: 10px 10px;
+  color: #fff;
+  text-align: center;
+  border-radius:3px;
+  background-color: #555;
+  visibility: hidden;
+  position:fixed;
+  left: 50%;
+  top: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -moz-transform:translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
     font-size: 50px;
-    display: flex;
-    justify-content: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    text-color: white;
+  }
+  .popup .close:hover {
+    color: white;
+  }
 }
-
-.analyse{
-    /*font-size: 30px;
-    display: flex;
-    justify-content: center;
-*/
-}
-
+/*end of popup*/
 .sentiment{
- font-size: 30px;
+ font-size: 40px;
     display: flex;
-   justify-content: flex-start;
+    padding: 10px 10px;
+    align-items:baseline;
+    font-weight: 700;
 
 }
 
 .subjectivity{
- font-size: 30px;
+ font-size: 40px;
  display: flex;
-  justify-content: flex-start;
-font-style
+ padding: 10px 10px;
+ align-items:baseline;
+ font-weight: 700;
+
 }
 
 .picture{
 display: flex;
-justify-content: flex-end;
-position: relative;
-top:-150px;
-left: 5px;
-width: 1200px;
-height: 500px;
+justify-content: center;
+ width: 50%
 
-transition-duration: 2s;
+
+
+}
+.container{
+display: flex;
+justify-content: center;
+
+
+
+
 
 }
 }

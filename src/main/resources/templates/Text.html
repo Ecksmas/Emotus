@@ -3,31 +3,51 @@
 
 <head>
     <meta charset="UTF-8">
-   <link rel="stylesheet" href="analysedText.css">
-
+   <link rel="stylesheet" href="/analysedText.css">
+    <script src="/img.js" defer></script>
     <title>Emotus</title>
 </head>
 <body>
 <nav id="nav-3">
-    <a class="link-3" href="#">About</a>
-    <a class="link-3" href="#">GitHub</a>
-    <a class="link-3" href="#">The
-        Team</a>
+    <a class="link-3" href="/">Home</a>
+    <div class="popup" onclick="aboutPopup()">About
+        <div class="popuptext" id="abPopup">
+            <a class="close" href="#">×</a>
+            Information about Emotus, Information about Emotus
+        </div>
+    </div>
+    <div class="popup" onclick="teamPopup()">The Team
+        <div class="popuptext" id="tePopup">
+            <a class="close" href="#">×</a>
+            Team text, Team text, Team text, Team text <br> Team text,Team text, Team text
+        </div>
+    </div>
+    <a class="link-3" href="https://github.com/Ecksmas/Emotus">GitHub</a>
 </nav>
+
+<script>
+function aboutPopup() {
+  var popup = document.getElementById("abPopup");
+  popup.classList.toggle("show");
+}
+function teamPopup() {
+  var popup = document.getElementById("tePopup");
+  popup.classList.toggle("show");
+}
+</script>
 <div>
-    <div class="logo">
-        <h1>Emotus</h1>
+       <div class="container" id="imageContainer">
+        <img class="picture" src="/verysad.jpg">
     </div>
 
-<div class = "analyse">
+<div>
     <span class ="sentiment">Sentiment:&nbsp;
-<span  th:text="${sentimentText}"></span></span>
+    <span  th:text="${sentimentText}"></span></span>
     <span class = "subjectivity">Subjectivity:&nbsp;
-<span  th:text="${subjectivityText}"></span></span>
+    <span  th:text="${subjectivityText}"></span></span>
 
-   <article class ="picture"> <img id= "image" src="/flowers.jpg" alt="Happy">
-   </article>
 </div>
 </div>
+
 </body>
 </html>
