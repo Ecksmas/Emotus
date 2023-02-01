@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-   <link rel="stylesheet" href="analysedText.css">
-
+   <link rel="stylesheet" href="/analysedText.css">
+    <script src="/img.js" defer></script>
     <title>Emotus</title>
 </head>
 <body>
@@ -19,15 +19,28 @@
         <h1>Emotus</h1>
     </div>
 
-<div class = "analyse">
+<div class = "analyse" onloadstart="showImage()">
     <span class ="sentiment">Sentiment:&nbsp;
-<span  th:text="${sentimentText}"></span></span>
+    <span  th:text="${sentimentText}"></span></span>
     <span class = "subjectivity">Subjectivity:&nbsp;
-<span  th:text="${subjectivityText}"></span></span>
+    <span  th:text="${subjectivityText}"></span></span>
 
-   <article class ="picture"> <img id= "image" src="/flowers.jpg" alt="Happy">
-   </article>
+    <!--<script>
+
+       let result = document.getElementByClassName(sentiment)
+    console.log(result)
+
+    </script>-->
+
+
+        <article class ="picture">
+       <!--<img id= "imageHappy" src="/flowers.jpg" alt="Positive">,
+       <img id="imageVeryHappy" src="/veryhappy.jpg" alt="Very Positive"><img id="imageNeutral" src="/neutral.jpg" alt="Neutral">,&ndash;&gt;
+        <img id="imageSad" src="/sad.jpg" alt="Negative">,
+        <img id="imageVerySad" src="/verysad.jpg" alt="Very Negative">-->
+       </article>
+</div><!--<div id="imageContainer"></div>-->
 </div>
-</div>
+
 </body>
 </html>

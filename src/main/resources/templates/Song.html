@@ -6,16 +6,34 @@
     <title>Emotus</title>
 </head>
 <body>
-<nav id="nav-3">
-    <a class="link-3" href="#">About</a>
-    <a class="link-3" href="#">GitHub</a>
-    <a class="link-3" href="#">The
-        Team</a>
-</nav>
-<a class="coverPhoto">
-    <img th:src="${songImg}" style="width:40%;">
-</a>
 
+<nav id="nav-3">
+    <a class="link-3" href="/">Home</a>
+    <div class="popup" onclick="aboutPopup()">About
+        <div class="popuptext" id="abPopup">
+            <a class="close" href="#">×</a>
+            Information about Emotus, Information about Emotus
+        </div>
+    </div>
+    <div class="popup" onclick="teamPopup()">The Team
+        <div class="popuptext" id="tePopup">
+            <a class="close" href="#">×</a>
+            Team text, Team text, Team text, Team text <br> Team text,Team text, Team text
+        </div>
+    </div>
+    <a class="link-3" href="https://github.com/Ecksmas/Emotus">GitHub</a>
+</nav>
+<a class="coverPhoto">    <img th:src="${songImg}" style="width:40%;"></a>
+<script>
+function aboutPopup() {
+  var popup = document.getElementById("abPopup");
+  popup.classList.toggle("show");
+}
+function teamPopup() {
+  var popup = document.getElementById("tePopup");
+  popup.classList.toggle("show");
+}
+</script>
 
 <br>
 <div>
