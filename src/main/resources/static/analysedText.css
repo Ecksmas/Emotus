@@ -121,7 +121,7 @@ width: flex;
 }
 /*end of popup*/
 .sentiment{
- font-size: 40px;
+ font-size: 30px;
     display: flex;
     padding: 10px 10px;
     align-items:baseline;
@@ -130,7 +130,7 @@ width: flex;
 }
 
 .subjectivity{
- font-size: 40px;
+ font-size: 30px;
  display: flex;
  padding: 10px 10px;
  align-items:baseline;
@@ -141,6 +141,7 @@ width: flex;
 .picture{
 display: flex;
 justify-content: center;
+margin-top:50 px;
  width: 50%
 
 
