@@ -2,21 +2,38 @@ package com.example.Group2;
 
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.http.client.ClientProtocolException;
 import org.junit.jupiter.api.*;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.io.IOException;
+import org.springframework.ui.Model;
 
 import static java.lang.Integer.parseInt;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.when;
 
 @SpringBootTest
 class Group2ApplicationTests {
 
+	@InjectMocks
+	private HomeController homeController;
+
+	@Mock
+	private Model model;
+
 	@Test
 	void contextLoads() {
+	}
+
+	@Test
+	public void viewHomePageTest_success() {
+		when(model.addAttribute(anyString(), anyString())).thenReturn(model);
+
+		String result = homeController.viewHomePage(model, "keyword");
+
+		assertEquals("test", result);
 	}
 
 	@Test
@@ -34,7 +51,7 @@ class Group2ApplicationTests {
 		// Substring into numerical correctness
 		String songId = StringUtils.substringBetween(s, "\\/songs\\/", "\",\"");
 
-		Assertions.assertEquals(parseInt(songId), 154031);
+		assertEquals(parseInt(songId), 154031);
 	}
 
 	@Test
@@ -56,8 +73,13 @@ class Group2ApplicationTests {
 		String sentimentText = StringUtils.substringBetween(sentimentResultBody, "\"sentiment\": \"", "\", \"");
 		String subjectivityText = StringUtils.substringBetween(sentimentResultBody, "subjectivity\": \"", "\", \"");
 
-		Assertions.assertEquals(sentimentText, "negative");
-		Assertions.assertEquals(subjectivityText, "objective");
+		assertEquals(sentimentText, "negative");
+		assertEquals(subjectivityText, "objective");
+	}
+
+	@Test
+	public void	songClassAddTest() {
+
 	}
 
 }

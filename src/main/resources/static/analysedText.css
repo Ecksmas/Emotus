@@ -5,27 +5,20 @@
         background-size: cover;
         -o-background-size: cover;
         margin: 0px;
+     font-family: Helvetica;
 }
 
 /* classes */
-h1{
-    margin-top:20px;
-       margin-bottom: 40px;
-       font-family: Rockwell, Comic Sans, Arial;
-       font-weight: normal;
-       color:#002408;
-}
 
-@import url(https://fonts.googleapis.com/css?family=Raleway);
 
-}
+
 /* navigation bar*/
 nav {
   position: fixed;
   width: 100%;
   font-family: Helvetica;
   margin-top: 0px;
-  padding-bottom: 30 px;
+  padding-bottom: 0 px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 #nav-3 {
@@ -121,18 +114,20 @@ width: flex;
 }
 /*end of popup*/
 .sentiment{
- font-size: 40px;
+ font-size: 30px;
     display: flex;
-    padding: 10px 10px;
+    padding: 5px 5px;
+    justify-content: center;
     align-items:baseline;
     font-weight: 700;
 
 }
 
 .subjectivity{
- font-size: 40px;
+ font-size: 30px;
  display: flex;
- padding: 10px 10px;
+ padding: 5px 5px;
+ justify-content: center;
  align-items:baseline;
  font-weight: 700;
 
@@ -141,12 +136,14 @@ width: flex;
 .picture{
 display: flex;
 justify-content: center;
+margin-top:30 px;
  width: 50%
 
 
 
 }
 .container{
+margin-top: 30px;
 display: flex;
 justify-content: center;
 
