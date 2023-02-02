@@ -14,13 +14,13 @@
     <div class="popup" onclick="aboutPopup()">About
         <div class="popuptext" id="abPopup">
             <a class="close" href="#">×</a>
-            Information about Emotus, Information about Emotus
+            Emotus is a webpage intended to analyse song lyrics and translate the result into text with an accompanying image representing the feelings associated with the lyrics. The user could be anyone interested in understanding more of what feelings their favorite song conveys. However, the original purpose of the website is to mainly help people that have trouble understanding what kind of feelings lyrics might create.
         </div>
     </div>
     <div class="popup" onclick="teamPopup()">The Team
         <div class="popuptext" id="tePopup">
             <a class="close" href="#">×</a>
-            Team text, Team text, Team text, Team text <br> Team text,Team text, Team text
+            We are called The Substringers and consists of Tedros, Frida, Krisitin, Aksel and Ludwig. This website was created as our final examination project after attending a 3-month long bootcamp.
         </div>
     </div>
     <a class="link-3" href="https://github.com/Ecksmas/Emotus">GitHub</a>
@@ -43,10 +43,10 @@ function teamPopup() {
 
 <div>
     <span class ="sentiment">Sentiment:&nbsp;
-    <span  th:text="${sentimentText}"></span>
-    <span class = "subjectivity">/ Subjectivity:&nbsp;
+    <span  th:text="${sentimentText}"></span></span>
+    <span class = "subjectivity">Subjectivity:&nbsp;
     <span  th:text="${subjectivityText}"></span></span>
-</span>
+
 </div>
 </div>
 

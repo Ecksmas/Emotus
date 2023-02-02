@@ -119,7 +119,7 @@ width: flex;
 form.analyse {
  display: flex;
 justify-content: auto;
- min-width: 1000px;
+ width: 1000px;
  height: 84px;
 }
 
@@ -137,46 +137,137 @@ form.analyse button {
     border: solid 1px #00003f;
     margin: 10px;
     cursor: pointer;
-
   }
     form.analyse button: hover {
     background: #193153	;
   }
 
+  form.analyse button: sizes {
+  width: 1000px;
+   height: 84px;
+  }
+
 .coverPhoto {
     display: flex;
     justify-content: left;
-
     margin-top; 200px;
     padding: 30px 10px;
+}
+
+.coverPhoto img {
+width: 500px;
+height: 500px;
 }
 
 .content {
     display: flex;
     justify-content: right;
-    min-height: 800px;
-    min-width: 500px;
     padding: 30px 30px;
     margin-bottom: 80px;
     margin-top: 80px;
-    border: solid 2px;
+     font-family: Helvetica;
+    font-size: 20px;
+border: solid 2px;
     margin: 10px;
-  background: #ecece7
+    background: #ecece7
    }
+
 
 .songArtist{
    display: flex;
    justify-content: left;
    /*align-items: top;*/
-   margin-top; 200px;
-   margin-bottom: 40px;
+   margin-top; 300px;
+   margin-bottom: 60px;
    justify-content: auto;
    padding: 24px 30px;
     border: solid 2px;
    margin: 10px;
+   font-family: Helvetica;
+   font-size: 30px;
    background: #ecece7;
+
 }
 
 
-
 .row {   display: flex}
+
+/*searching 2.0*/
+
+*{
+margin: 0;
+padding 0;
+box sizing: border-box
+}
+
+.Searching{
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.container{
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+.ring{
+width: 200px;
+height: 200px;
+border: 4px solid black;
+border-radius: 50%;
+position: absolute;
+}
+
+.ring:nth-child(1){
+border-bottom-width: 8px;
+border-color: purple;
+animation: rotate1 2s linear infinite;
+}
+
+.ring:nth-child(2){
+border-right-width: 8px;
+border-color: blue;
+animation: rotate2 2s linear infinite;
+}
+
+.ring:nth-child(3){
+border-top-width: 8px;
+border-color: green;
+animation: rotate3 2s linear infinite;
+}
+
+.searching{
+color: black;}
+
+@keyframes rotate1{
+0%{
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100%{
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate2{
+0%{
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100%{
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate3{
+0%{
+    transform: rotateX(50deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100%{
+    transform: rotateX(50deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
