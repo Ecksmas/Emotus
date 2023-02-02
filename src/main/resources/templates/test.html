@@ -95,24 +95,27 @@ function teamPopup() {
 <br>
 
 <table class="table">
-    <span>
-    <tr>
-        <th>Title</th>
-        <th>Artist</th>
-    </tr>
-    </span>
+<!--    <span>-->
+<!--    <tr>-->
+<!--        <th>Title</th>-->
+<!--        <th>Artist</th>-->
+<!--    </tr>-->
+<!--    </span>-->
     <span>
     <tr th:each="song : ${songList}">
         <td>
+            <p>Artist:</p>
             <a th:href="@{/song(id=${song.songId})}" style="display:block;">
-                <span th:text="${song.artist}"></span>
+                <div th:text="${song.title}"></div>
             </a>
         </td>
-        <td>
+         <td>
+            <p>Song:</p>
             <a th:href="@{/song(id=${song.songId})}" style="display:block;">
-                <span th:text="${song.title}"></span>
+                <div th:text="${song.artist}"> </div>
             </a>
         </td>
+
     </tr>
     </span>
 </table>

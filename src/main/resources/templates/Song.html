@@ -37,18 +37,19 @@ function teamPopup() {
 </script>
 
 
+
 <div class="row">
     <div class="coverPhoto"><img th:src="${songImg}">
     </div>
 
     <div>
         <div class="songArtist">
-            <a><b>Song: </b></a>
+            <a><b>Song:</b></a>
             <a th:text="${titleResult}">Song title:</a>
+            &nbsp;&nbsp;
             <a><b>Artist: </b></a>
-            <a th:text="${artistResult}">Artist:</a>
+            <a th:text="${artistResult}">Artist name:</a>
         </div>
-
 
         <div class="content">
             <p th:text="${lyricsResult}"></p>

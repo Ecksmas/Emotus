@@ -119,7 +119,7 @@ width: flex;
 form.analyse {
  display: flex;
 justify-content: auto;
- min-width: 1000px;
+ width: 1000px;
  height: 84px;
 }
 
@@ -137,46 +137,57 @@ form.analyse button {
     border: solid 1px #00003f;
     margin: 10px;
     cursor: pointer;
-
   }
     form.analyse button: hover {
     background: #193153	;
   }
 
+  form.analyse button: sizes {
+  width: 1000px;
+   height: 84px;
+  }
+
 .coverPhoto {
     display: flex;
     justify-content: left;
-
     margin-top; 200px;
     padding: 30px 10px;
+}
+
+.coverPhoto img {
+width: 500px;
+height: 500px;
 }
 
 .content {
     display: flex;
     justify-content: right;
-    min-height: 800px;
-    min-width: 500px;
     padding: 30px 30px;
     margin-bottom: 80px;
     margin-top: 80px;
-    border: solid 2px;
+     font-family: Helvetica;
+    font-size: 20px;
+border: solid 2px;
     margin: 10px;
-  background: #ecece7
+    background: #ecece7
    }
+
 
 .songArtist{
    display: flex;
    justify-content: left;
    /*align-items: top;*/
-   margin-top; 200px;
-   margin-bottom: 40px;
+   margin-top; 300px;
+   margin-bottom: 60px;
    justify-content: auto;
    padding: 24px 30px;
     border: solid 2px;
    margin: 10px;
+   font-family: Helvetica;
+   font-size: 30px;
    background: #ecece7;
-}
 
+}
 
 
 .row {   display: flex}
