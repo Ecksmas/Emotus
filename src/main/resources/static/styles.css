@@ -11,9 +11,9 @@ body {
 h1{
     margin-top:20px;
     margin-bottom: 40px;
-    font-family: Helvetica, Rockwell, Comic Sans, Arial;
+    font-family: Helvetica, Arial;
     font-weight: normal;
-    color:#002408;
+    color:black;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Raleway);
@@ -82,6 +82,7 @@ form.example {
   }
 
   table{
+  font-family: Helvetica;
   display: flex;
   justify-content: center;
   font-size: 25px;
