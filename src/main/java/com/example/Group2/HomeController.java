@@ -65,7 +65,7 @@ public class HomeController {
                 .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
                 .asString();
 
-        // Uncomment to see if API is maxed
+        // Uncomment to see if Genius API is maxed out
         // System.out.println(lyrics.getBody());
 
         JSONObject json = new JSONObject(lyrics.getBody());
@@ -79,7 +79,7 @@ public class HomeController {
         model.addAttribute("artistResult", artistResult);
 
         //Searches for header url
-        HttpResponse<String> songIdResponse = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=" + titleResult + "&per_page=5&page=1")
+        HttpResponse<String> songIdResponse = Unirest.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=" + titleResult + " " + artistResult + "&per_page=5&page=1")
                 .header("X-RapidAPI-Key", "7fdc5ae974msh4665893b2c77710p1523e0jsn4e77becb0728")
                 .header("X-RapidAPI-Host", "genius-song-lyrics1.p.rapidapi.com")
                 .asString();
@@ -104,9 +104,6 @@ public class HomeController {
 
         String text = endLyrics.replace("\n"," ").replace("\"","");
 
-        //
-        System.out.println("Text before:" + text);
-
         HttpResponse<String> sentimentResult = Unirest.post("https://sentiment-analysis46.p.rapidapi.com/sentiment")
                 .header("content-type", "application/json")
                 .header("X-RapidAPI-Key", "1c1587b38emsh0e7714653c0660ep10ab75jsnf6e80542980e")
@@ -116,17 +113,11 @@ public class HomeController {
 
         JSONObject json = new JSONObject(sentimentResult.getBody());
 
-        //
-        System.out.println(sentimentResult.getBody());
-
         String sentimentText = json.getString("sentiment");
         String subjectivityText = json.getString("subjectivity");
 
-
         model.addAttribute("sentimentText", sentimentText);
         model.addAttribute("subjectivityText", subjectivityText);
-
-
 
         return "Text";
     }
