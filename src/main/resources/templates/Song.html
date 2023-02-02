@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/stylesSong.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <title>Emotus</title>
 </head>
 <body>
@@ -44,16 +45,21 @@ function teamPopup() {
         <div class="songArtist">
             <a><b>Song: </b></a>
             <a th:text="${titleResult}">Song title:</a>
-            <!--     <span class="artistName">-->
             <a><b>Artist: </b></a>
             <a th:text="${artistResult}">Artist:</a>
-            <!--    </span>-->
         </div>
 
 
         <div class="content">
             <p th:text="${lyricsResult}"></p>
         </div>
+
+            <div class="analyse">
+            <form class="analyse button" th:action="@{/Text}">
+                <button type="submit">Analyse text</button>
+            </form>
+            </div>
+
     </div>
 
 </div>
@@ -62,9 +68,7 @@ function teamPopup() {
 
 
 
-<form class="analyse" th:action="@{/Text}">
-    <button type="submit">Analyse text</button>
-</form>
+
 <br>
 <br>
 <br>

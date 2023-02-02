@@ -118,65 +118,63 @@ width: flex;
 
 form.analyse {
  display: flex;
- justify-content: center;
-     margin-top: 100px;
-     margin-bottom: 40px;
+justify-content: auto;
+ min-width: 1000px;
+ height: 84px;
 }
 
 form.analyse button {
-    display: flex;
     justify-content: center;
-    width: 200px;
-    height: 50px;
+    padding: 24px 30px;
+    border-radius: 5px;
+    margin-top; 30px;
+    margin-bottom: 200px;
     background: #42698c;
-    color: white;
+    color: #ecece7;
     name: Analyse;
     font-size: 20px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-    border: solid 1px grey;
+    border: solid 1px #00003f;
+    margin: 10px;
     cursor: pointer;
 
   }
-    form.analyse button:hover {
+    form.analyse button: hover {
     background: #193153	;
   }
 
 .coverPhoto {
     display: flex;
-    justify-content: right;
+    justify-content: left;
+
     margin-top; 200px;
     padding: 30px 10px;
-
-}
-
-.songTitle {
-   padding: 24px 30px;
-}
-
-.artistName {
-   padding: 24px 20px;
 }
 
 .content {
-display: flex;
-   padding: 24px 30px;
+    display: flex;
+    justify-content: right;
+    min-height: 800px;
+    min-width: 500px;
+    padding: 30px 30px;
     margin-bottom: 80px;
     margin-top: 80px;
     border: solid 2px;
     margin: 10px;
-  background: #ecece7;
-               }
+  background: #ecece7
+   }
 
 .songArtist{
-   align-items: top;
+   display: flex;
+   justify-content: left;
+   /*align-items: top;*/
    margin-top; 200px;
    margin-bottom: 40px;
    justify-content: auto;
-   padding: 10px 20px;
+   padding: 24px 30px;
     border: solid 2px;
    margin: 10px;
    background: #ecece7;
-
 }
 
 
