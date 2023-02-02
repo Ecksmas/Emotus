@@ -123,7 +123,7 @@ width: flex;
 .sentiment{
  font-size: 30px;
     display: flex;
-    padding: 10px 10px;
+    padding: 5px 5px;
     align-items:baseline;
     font-weight: 700;
 
@@ -132,7 +132,7 @@ width: flex;
 .subjectivity{
  font-size: 30px;
  display: flex;
- padding: 10px 10px;
+ padding: 5px 5px;
  align-items:baseline;
  font-weight: 700;
 
@@ -141,7 +141,7 @@ width: flex;
 .picture{
 display: flex;
 justify-content: center;
-margin-top:50 px;
+margin-top:30 px;
  width: 50%
 
 
