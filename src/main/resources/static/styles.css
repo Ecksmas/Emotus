@@ -199,15 +199,11 @@ width: flex;
     justify-content: center;
 }
 
-.table table-striped{
-margin-top: 60px;
-}
 tbody {
     display: table-row-group;
     vertical-align: middle;
     background-color: white;
     opacity: 0.5;
-
 }
 
 a{

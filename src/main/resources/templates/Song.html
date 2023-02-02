@@ -63,8 +63,24 @@ function teamPopup() {
 
 
 <form class="analyse" th:action="@{/Text}">
-    <button type="submit">Analyse text</button>
+    <button type="submit" id="snap">Analyse text</button>
 </form>
+
+<Searching class="searching" style="visibility: hidden" id="spin">
+    <div class="container">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+    </div>
+</Searching>
+
+<script>
+    const targetDiv = document.getElementById("spin");
+    const btn = document.getElementById("snap");
+    btn.onclick = function () {
+    targetDiv.style.visibility = "visible";
+    }
+</script>
 <br>
 <br>
 <br>
