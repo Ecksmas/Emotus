@@ -8,7 +8,8 @@ body {
 }
 
 
-h1{
+h1,
+logo{
     margin-top:20px;
     margin-bottom: 40px;
     font-family: Helvetica, Arial;
@@ -28,11 +29,11 @@ label{
 
 /* classes */
 
-.logo{
+/*.logo{
     font-size: 70px;
     display: flex;
     justify-content: center;
-}
+}*/
 
 .search-wrapper
   {
@@ -195,6 +196,13 @@ width: flex;
   }
 }
 /*end of popup*/
+
+
+.logo img {
+width: 120px;
+height:120px;
+margin-top:37px;
+}
 
 .logo{
     font-size: 70px;
