@@ -57,7 +57,7 @@ function teamPopup() {
 
             <div class="analyse">
             <form class="analyse button" th:action="@{/Text}">
-                <button type="submit">Analyse text</button>
+                <button type="submit" id="snap" >Analyse text</button>
             </form>
             </div>
 
@@ -65,13 +65,6 @@ function teamPopup() {
 
 </div>
 
-
-
-
-
-<form class="analyse" th:action="@{/Text}">
-    <button type="submit" id="snap">Analyse text</button>
-</form>
 
 <Searching class="searching" style="visibility: hidden" id="spin">
     <div class="container">

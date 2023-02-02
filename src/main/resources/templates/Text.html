@@ -41,13 +41,16 @@ function teamPopup() {
         <img class="picture" src="/verysad.jpg">
     </div>
 
-<div>
-    <span class ="sentiment">Sentiment:&nbsp;
-    <span  th:text="${sentimentText}"></span></span>
-    <span class = "subjectivity">Subjectivity:&nbsp;
-    <span  th:text="${subjectivityText}"></span></span>
-
 </div>
+
+<div class ="sentiment">
+    <p>Sentiment:&nbsp;
+    <div th:text="${sentimentText}"></div></p>
+    <br>
+    <p>Subjectivity:&nbsp;
+    <div  th:text="${subjectivityText}"></div></P>
+    <br/>
+
 </div>
 
 </body>

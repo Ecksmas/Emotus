@@ -14,7 +14,6 @@
 
 /* navigation bar*/
 nav {
-  position: fixed;
   width: 100%;
   font-family: Helvetica;
   margin-top: 0px;
@@ -120,7 +119,6 @@ width: flex;
     justify-content: center;
     align-items:baseline;
     font-weight: 700;
-
 }
 
 .subjectivity{
@@ -131,7 +129,13 @@ width: flex;
  align-items:baseline;
  font-weight: 700;
 
+
 }
+
+.sentiment,
+.subjectivity{
+ border: solid 2px;
+ background: #ecece7;}
 
 .picture{
 display: flex;
