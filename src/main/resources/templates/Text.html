@@ -43,13 +43,18 @@ function teamPopup() {
 
 </div>
 
-<div class ="sentiment">
-    <p>Sentiment:&nbsp;
-    <div th:text="${sentimentText}"></div></p>
-    <br>
-    <p>Subjectivity:&nbsp;
-    <div  th:text="${subjectivityText}"></div></P>
-    <br/>
+    <span class="sentiment">Sentiment:&nbsp;
+    <span th:text="${sentimentText}"></span></span>
+    <span class="subjectivity">Subjectivity:&nbsp;
+    <span th:text="${subjectivityText}"></span></span>
+
+<!--<div class ="sentiment">
+    <span>Sentiment:&nbsp;
+    <div th:text="${sentimentText}"></div></span>
+
+    <span>Subjectivity:&nbsp;
+    <div  th:text="${subjectivityText}"></div></span>-->
+
 
 </div>
 

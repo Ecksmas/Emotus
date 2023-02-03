@@ -44,10 +44,10 @@ function teamPopup() {
 
     <div>
         <div class="songArtist">
-            <a><b>Song:</b></a>
+            <a><b>Song:&nbsp;</b></a>
             <a th:text="${titleResult}">Song title:</a>
-            &nbsp;&nbsp;
-            <a><b>Artist: </b></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a><b>Artist:&nbsp;</b></a>
             <a th:text="${artistResult}">Artist name:</a>
         </div>
 
@@ -57,7 +57,7 @@ function teamPopup() {
 
             <div class="analyse">
             <form class="analyse button" th:action="@{/Text}">
-                <button type="submit" id="snap" >Analyse text</button>
+                <button type="submit" id="snap">Analyse text</button>
             </form>
             </div>
 
@@ -81,6 +81,7 @@ function teamPopup() {
     targetDiv.style.visibility = "visible";
     }
 </script>
+
 <br>
 <br>
 <br>
