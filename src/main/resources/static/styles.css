@@ -58,7 +58,7 @@ form.example {
     height: 60px;
     margin-left: 20px;
     font-size: 30px;
-    border: 1px solid grey;
+    border: 1px solid #191e28;
     float: left;
     width: 60%;
     background: #ecece7;
@@ -67,7 +67,6 @@ form.example {
   /* Style the submit button */
   form.example button {
     float: left;
-    width: 10%;
     height: 60px;
     background: #637d96;
     color: black;
@@ -78,8 +77,8 @@ form.example {
   }
 
   form.example button:hover {
-    background: #193153;
-    -webkit-filter: brightness(80%);
+    background: #637d96;
+    -webkit-filter: brightness(70%);
   }
 
   table{
@@ -214,7 +213,7 @@ tbody {
     display: table-row-group;
     vertical-align: middle;
     background-color: white;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 a{

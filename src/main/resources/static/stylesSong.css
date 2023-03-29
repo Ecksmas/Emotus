@@ -167,9 +167,10 @@ height: 500px;
     margin-top: 80px;
      font-family: Helvetica;
     font-size: 20px;
-border: solid 2px;
+    border: solid 2px;
     margin: 10px;
-    background: #ecece7
+    background: #ecece7;
+    opacity: 0.6;
    }
 
 
@@ -186,7 +187,7 @@ border: solid 2px;
    font-family: Helvetica;
    font-size: 30px;
    background: #ecece7;
-
+   opacity: 0.6;
 }
 
 

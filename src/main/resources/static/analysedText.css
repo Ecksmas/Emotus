@@ -14,7 +14,6 @@
 
 /* navigation bar*/
 nav {
-  position: fixed;
   width: 100%;
   font-family: Helvetica;
   margin-top: 0px;
@@ -113,14 +112,13 @@ width: flex;
   }
 }
 /*end of popup*/
-.sentiment{
+/*.sentiment{
  font-size: 30px;
     display: flex;
     padding: 5px 5px;
     justify-content: center;
     align-items:baseline;
     font-weight: 700;
-
 }
 
 .subjectivity{
@@ -130,8 +128,18 @@ width: flex;
  justify-content: center;
  align-items:baseline;
  font-weight: 700;
+}*/
 
-}
+.sentiment,
+.subjectivity{
+ background: #ecece7;
+ font-size: 30px;
+  display: flex;
+  padding: 5px 5px;
+  justify-content: center;
+  font-weight: 700;
+  opacity: 0.6;
+  }
 
 .picture{
 display: flex;
@@ -143,7 +151,8 @@ margin-top:30 px;
 
 }
 .container{
-margin-top: 30px;
+margin-top: 15px;
+margin-bottom: 15px;
 display: flex;
 justify-content: center;
 
